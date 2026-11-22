@@ -1,6 +1,7 @@
 ---
 // Sobre nosotros. Solo datos verificables (regla 4 de CLAUDE.md): no se inventan años de experiencia, clientes ni cifras.
-// Textos en borrador: docs/CONTENIDOS.md. La trayectoria del titular está pendiente de que la aporte él.
+// Textos en borrador: docs/CONTENIDOS.md. La trayectoria sale del currículum del titular (2026-11-22), sin nombres de empresas,
+// sin cifras de resultados y sin datos personales; el titular debe confirmar cada afirmación antes del lanzamiento.
 import Base from '../layouts/Base.astro';
 import Seccion from '../components/Seccion.astro';
 import Hero from '../components/Hero.astro';
@@ -21,6 +22,12 @@ const valores = [
   { titulo: 'Trato cercano', texto: 'Hablas directamente con la persona que hace el trabajo, sin intermediarios.' },
   { titulo: 'Enfoque práctico', texto: 'Buscamos que la tecnología te quite trabajo y te dé tiempo, no que sea otra cosa más que mantener.' },
   { titulo: 'Transparencia', texto: 'No prometemos lo que no podemos cumplir. Nuestros agentes de IA se identifican siempre como IA, y los ejemplos de esta web son ilustrativos, no casos de clientes.' },
+];
+
+const experiencia = [
+  { titulo: 'Dirigir un negocio', texto: 'Más de 18 años al frente de una empresa de instalaciones de climatización, control y electricidad: equipo propio, clientes, presupuestos y control de proyectos.' },
+  { titulo: 'Marketing digital para pymes', texto: 'Responsable de operaciones, desarrollo y atención al cliente en una plataforma de marketing digital para pequeñas y medianas empresas.' },
+  { titulo: 'Clientes al teléfono', texto: 'Años captando, atendiendo y fidelizando clientes por teléfono: sé lo que cuesta cada llamada que no se atiende.' },
 ];
 ---
 <Base titulo="Sobre nosotros" descripcion="Quiénes somos en FACTORNEX: tecnología comprensible, soluciones a medida y trato cercano para negocios, autónomos y pymes.">
@@ -50,7 +57,17 @@ const valores = [
       <p>
         {EMPRESA.nombreComercial} es el nombre comercial de <strong class="text-texto">{EMPRESA.titular}</strong>, que atiende personalmente cada proyecto.
       </p>
-      <p>[PENDIENTE: trayectoria y experiencia verificables del titular: qué ha hecho, en qué sectores y qué le llevó a crear FACTORNEX. No incluir años de experiencia, clientes ni resultados que no se puedan comprobar.]</p>
+      <p>
+        Su trayectoria viene del mundo del negocio, no solo de la tecnología: ha dirigido equipos, ha tratado con clientes y ha trabajado con pequeñas y medianas empresas. Por eso entiende lo que supone no poder coger el teléfono, o perder horas en tareas que no son tu negocio.
+      </p>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {experiencia.map((e) => <Tarjeta titulo={e.titulo}>{e.texto}</Tarjeta>)}
+    </div>
+    <div class="mt-10 max-w-3xl space-y-4 text-lg text-suave">
+      <p>
+        Además, ha completado formación continua en marketing online, redes sociales, gestión de equipos y control de costes. FACTORNEX nace para ayudar a pymes y autónomos a resolver esos problemas con inteligencia artificial y automatización, hablando su idioma y no el de la tecnología.
+      </p>
     </div>
   </Seccion>
 

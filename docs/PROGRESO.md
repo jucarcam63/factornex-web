@@ -5,7 +5,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 ## Ahora mismo
 - Web de prueba en Vercel: https://factornex-web.vercel.app (despliegue automático desde `main`; protección de Vercel desactivada en este proyecto, 2026-11-22). Commits nuevos con la identidad `jucarcam63` (correo noreply de GitHub); si no, Vercel Hobby no despliega.
 - Tema oscuro publicado en `main` (2026-11-22). Rama de prueba `prueba-modo-oscuro` ya integrada; se puede borrar.
-- Siguiente paso: Soluciones (en el menú, todavía da 404): decidir si se mantiene como página aparte o se retira del menú en la v1. Además, completar la trayectoria del titular en Sobre nosotros.
+- Siguiente paso: Soluciones (en el menú, todavía da 404): decidir si se mantiene como página aparte o se retira del menú en la v1. Además, que el titular confirme los textos de Sobre nosotros (trayectoria).
 - NIF publicado solo en el aviso legal (variable `NIF_TITULAR` en Vercel, tipo Secret; verificado el 2026-11-22: formato y letra de control correctos, y no aparece en ninguna otra página).
 - Formulario activo: `RESEND_API_KEY` (secreta) y `CONTACT_TO_EMAIL` están en Vercel. Los correos salen de `onboarding@resend.dev` y pueden caer en Spam al principio. Mejora pendiente: verificar el dominio factornex.es en Resend y definir `CONTACT_FROM_EMAIL` cuando exista el dominio.
 - **Tarea anual (octubre):** cuando se publiquen los festivos del año siguiente (BOCM y BOE), añadir en el calendario principal de jucarcam63 los de fecha variable (Jueves y Viernes Santo, San José si procede, traslados por caer en domingo) y los festivos locales. Los de fecha fija se repiten solos. Archivo de partida: `docs/festivos-reservas.ics` (generador: `docs/festivos-reservas.generador.cjs`). Los festivos locales de Torrejón de Ardoz no se bloquean: el titular los ha sustituido por los de Madrid.
@@ -43,7 +43,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - [x] Inicio (borrador completo, 8 secciones; textos por revisar, ver CONTENIDOS.md)
 - [x] Agente IA (`/agente-ia`, borrador completo; sin textos [PENDIENTE]; revisar los borradores antes del lanzamiento, ver CONTENIDOS.md)
 - [x] Servicios (v1: una sola página `/servicios` con las tres secciones, cómo trabajamos y preguntas frecuentes; borrador a revisar. Se puede dividir en una página por servicio más adelante)
-- [x] Sobre nosotros (publicada con contenido verificable: filosofía, valores y nombre del titular; **falta la trayectoria del titular**, marcada [PENDIENTE] en la página; ver CONTENIDOS.md)
+- [x] Sobre nosotros (publicada: filosofía, valores, nombre del titular y trayectoria sacada de su currículum; **el titular debe confirmar cada afirmación**; ver CONTENIDOS.md)
 - [x] Contacto con formulario (activo y probado de punta a punta el 2026-11-22: la consulta de prueba llegó al correo de destino; reserva de llamadas con Google Calendar enlazada)
 - [x] Legales: aviso legal, privacidad, cookies (borradores completos; ver CONTENIDOS.md; faltan 4 [PENDIENTE] y revisión del asesor)
 
