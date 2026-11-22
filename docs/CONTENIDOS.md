@@ -98,7 +98,7 @@ Formulario con validación en navegador y servidor, antispam (campo trampa + tie
 ## Legales ⏳
 Aviso legal · Política de privacidad · Política de cookies.
 - Titular: Juan Carlos Camaño Martínez (persona física). Nombre comercial: FACTORNEX.
-- Domicilio: Avenida de la Constitución 97, 28850 Torrejón de Ardoz, Madrid. NIF: ya facilitado (variable `NIF_TITULAR`, no está en el código), mostrarlo **solo en el aviso legal**.
+- Domicilio: Avenida de la Constitución 97, 28850 Torrejón de Ardoz, Madrid; NIF: ya facilitado (variable `NIF_TITULAR`, no está en el código). Ambos se muestran **solo en el aviso legal**, no en el pie ni en privacidad.
 - Correo de contacto: variable `CONTACT_TO_EMAIL`; se muestra solo en aviso legal y privacidad.
 
 ### Estado de las páginas legales (2026-11-22) — BORRADORES, revisar con el asesor antes del lanzamiento

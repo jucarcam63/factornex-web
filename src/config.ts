@@ -43,6 +43,8 @@ export const LEGALES = [
 export const EMPRESA = {
   titular: 'Juan Carlos Camaño Martínez',
   nombreComercial: 'FACTORNEX',
+  // El domicilio NO se muestra en el pie ni en el resto de la web (decisión del titular: es también su domicilio particular).
+  // Solo aparece en el aviso legal (src/pages/aviso-legal.astro), donde la LSSI lo exige.
   domicilio: 'Avenida de la Constitución 97, 28850 Torrejón de Ardoz, Madrid',
   // NIF y correo de contacto NO están aquí a propósito (decisión del titular: no mostrarlos en el pie ni en el resto de la web).
   // Se leen de las variables de entorno NIF_TITULAR y CONTACT_TO_EMAIL, y solo los usan las páginas legales
