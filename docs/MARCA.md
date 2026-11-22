@@ -16,7 +16,8 @@ Estado: **aprobada** (salvo los puntos marcados [PENDIENTE]).
 Basado en el logo original (símbolo de Factor IA) con el texto cambiado a FACTORNEX. **No se modifica el símbolo.**
 
 ### Composición
-- Símbolo a la izquierda + "FACTORNEX" en una línea, azul noche plano (sin degradado en el texto).
+- Símbolo a la izquierda + "FACTORNEX" en una línea: las letras F-A-C-T-O-R-N-E en azul noche plano y la **X final con degradado** (azul oscuro abajo → turquesa arriba), como el símbolo. Decidido 2026-11-22.
+- Para usos a una sola tinta (sellos, fax, blanco y negro) se podrá preparar una versión con la X plana; la principal mantiene el degradado.
 - Descriptor (solo en la versión completa): una línea, gris pizarra, peso más fino y tamaño menor que el nombre, para no competir con él.
 
 ### Versiones
@@ -35,7 +36,7 @@ Basado en el logo original (símbolo de Factor IA) con el texto cambiado a FACTO
   - Originales sin tocar en `public/logo/provisional/` (`simbolo-original.jpg`, `principal-original.jpg`, `completo-original.jpg`).
   - Versiones con márgenes recortados: `factornex-simbolo-provisional.png`, `factornex-principal-provisional.png` (la que usa la web), `factornex-completo-provisional.png`.
   - `public/favicon.png`: símbolo centrado en 256 × 256, provisional.
-  - Diferencias con esta guía: la "X" final lleva degradado (aquí se pide texto azul noche plano) y la versión completa dice "para empresas" (el descriptor aprobado es "para negocios"). [PENDIENTE: decidir si se acepta la "X" con degradado y corregir el descriptor en la versión definitiva.]
+  - La "X" con degradado de estos logos es correcta (decidido). Diferencia que sigue pendiente: la versión completa dice "para empresas" y el descriptor aprobado es "para negocios". [PENDIENTE: corregir el descriptor en la versión definitiva.]
 - Antiguo: `logo-factornex-provisional.webp` (1024 × 572, ya no se usa).
 
 ### Reglas de uso

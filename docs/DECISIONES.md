@@ -19,6 +19,7 @@
 | 2026-11-22 | Titular: Juan Carlos Camaño Martínez (persona física), nombre comercial FACTORNEX | Datos para aviso legal y privacidad |
 | 2026-11-22 | Producto estrella: agente de IA que atiende llamadas y WhatsApp (responde, presupuesta, agenda, avisa) | Impacto directo y fácil de entender; captar clientes cuanto antes. Automatización y desarrollo a medida quedan como servicios complementarios |
 | 2026-11-22 | Público: negocios, autónomos y empresas (pymes). Particulares descartados | Foco comercial y mensaje claro |
+| 2026-11-22 | La "X" final de FACTORNEX lleva degradado (azul → turquesa); el resto del nombre, azul noche plano | Enlaza el nombre con los colores del símbolo. Versión de una sola tinta aparte si hace falta |
 | 2026-11-22 | Sin precio publicado en la v1; llamada a la acción: reservar una llamada / diagnóstico gratuito | Precio aún sin definir ni validar con clientes reales. Revisar tras los 3 primeros clientes y publicar "desde X €/mes" si el precio es estable |
 
 ## Pendientes
