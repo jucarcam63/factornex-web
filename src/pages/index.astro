@@ -9,7 +9,7 @@ import Faq from '../components/Faq.astro';
 import Tarjeta from '../components/Tarjeta.astro';
 import Boton from '../components/Boton.astro';
 import { RESERVA_URL, SITE } from '../config';
-import { pasosHistoria, preguntasComunes } from '../contenidos/agente';
+import { pasosHistoria, preguntasComunes, integraciones, notaIntegraciones } from '../contenidos/agente';
 
 ---
 <Base titulo={`${SITE.nombre} — ${SITE.descriptor}`} descripcion="Agente de IA que atiende el WhatsApp y las llamadas de tu negocio: responde, presupuesta, agenda citas y avisa. Para pymes, autónomos y comercios.">
@@ -57,11 +57,10 @@ import { pasosHistoria, preguntasComunes } from '../contenidos/agente';
   </Seccion>
 
   <Seccion id="integraciones" titulo="Se conecta con lo que ya usas" introduccion="El agente trabaja con tus herramientas del día a día, por ejemplo para ver tus huecos y reservar citas en tu calendario.">
-    <div class="grid gap-6 md:grid-cols-3">
-      <Tarjeta titulo="WhatsApp">Canal por el que tus clientes te escriben.</Tarjeta>
-      <Tarjeta titulo="Google Calendar">Consulta tus huecos y agenda las citas.</Tarjeta>
-      <Tarjeta titulo="Otras herramientas">[PENDIENTE: confirmar Outlook y CRM antes de mostrarlos]</Tarjeta>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {integraciones.map((i) => <Tarjeta titulo={i.titulo}>{i.texto}</Tarjeta>)}
     </div>
+    <p class="mt-8 text-pizarra">{notaIntegraciones}</p>
   </Seccion>
 
   <Seccion fondo="claro" id="mas-servicios" titulo="Y si necesitas algo más" introduccion="Además del agente, creamos soluciones a medida para el resto de tu negocio.">

@@ -24,7 +24,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 
 ## Fase 2 — Páginas
 - [x] Inicio (borrador completo, 8 secciones; textos por revisar, ver CONTENIDOS.md)
-- [x] Agente IA (`/agente-ia`, borrador completo; tiene 3 textos [PENDIENTE], ver CONTENIDOS.md)
+- [x] Agente IA (`/agente-ia`, borrador completo; queda 1 texto [PENDIENTE] sobre el número de WhatsApp, ver CONTENIDOS.md)
 - [ ] Servicios (índice + una página por servicio)
 - [ ] Sobre nosotros
 - [ ] Contacto con formulario funcional

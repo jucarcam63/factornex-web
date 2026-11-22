@@ -9,7 +9,7 @@ import Faq from '../components/Faq.astro';
 import Tarjeta from '../components/Tarjeta.astro';
 import Boton from '../components/Boton.astro';
 import { RESERVA_URL } from '../config';
-import { pasosHistoria, preguntasComunes } from '../contenidos/agente';
+import { pasosHistoria, preguntasComunes, integraciones, notaIntegraciones } from '../contenidos/agente';
 
 const tareas = [
   { titulo: 'Responde dudas', texto: 'Contesta lo que tus clientes preguntan siempre: horarios, servicios, ubicación y cómo trabajas.' },
@@ -47,8 +47,11 @@ const empezar = [
 const preguntas = [
   ...preguntasComunes,
   { pregunta: '¿Puedo ponerle nombre al agente?', respuesta: 'Sí. Cada negocio elige el nombre de su agente, el que mejor encaje con su marca.' },
-  { pregunta: '¿Cuánto tarda en estar listo?', respuesta: '[PENDIENTE: plazo estimado de puesta en marcha]' },
-  { pregunta: '¿Qué necesito para empezar?', respuesta: '[PENDIENTE: qué debe aportar el negocio: tarifas, horarios, calendario…]' },
+  { pregunta: '¿Cuánto tarda en estar listo?', respuesta: 'Puede estar funcionando en una semana, una vez que tenemos la información de tu negocio.' },
+  { pregunta: '¿Qué necesito para empezar?', respuesta: 'Nos das la información de tu negocio: tus tarifas, tus horarios, tu calendario y tus servicios, junto con lo que quieras que el agente sepa y diga. Nosotros lo configuramos.' },
+  { pregunta: '¿Sustituye a mi equipo?', respuesta: 'No. Se encarga de lo repetitivo, como contestar, presupuestar y agendar, para que tu equipo se dedique a lo que importa. Todo lo delicado lo pasa a una persona.' },
+  { pregunta: '¿Funciona con el número de WhatsApp que ya uso?', respuesta: '[PENDIENTE: confirmar si el agente puede usar el número actual del negocio]' },
+  { pregunta: '¿Cuánto cuesta?', respuesta: 'Depende de tu negocio y de lo que necesites. En la llamada de diagnóstico gratuito lo calculamos contigo.' },
 ];
 ---
 <Base titulo="Agente de IA para WhatsApp y llamadas" descripcion="Un agente de IA atiende el WhatsApp y las llamadas de tu negocio: responde dudas, presupuesta, agenda citas y avisa. Si no sabe algo, pasa el caso a una persona.">
@@ -81,11 +84,10 @@ const preguntas = [
   </Seccion>
 
   <Seccion id="integraciones" titulo="Se conecta con lo que ya usas" introduccion="El agente trabaja con tus herramientas del día a día, por ejemplo para ver tus huecos y reservar citas en tu calendario.">
-    <div class="grid gap-6 md:grid-cols-3">
-      <Tarjeta titulo="WhatsApp">Canal por el que tus clientes te escriben.</Tarjeta>
-      <Tarjeta titulo="Google Calendar">Consulta tus huecos y agenda las citas.</Tarjeta>
-      <Tarjeta titulo="Otras herramientas">[PENDIENTE: confirmar Outlook y CRM antes de mostrarlos]</Tarjeta>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {integraciones.map((i) => <Tarjeta titulo={i.titulo}>{i.texto}</Tarjeta>)}
     </div>
+    <p class="mt-8 text-pizarra">{notaIntegraciones}</p>
   </Seccion>
 
   <Seccion fondo="claro" id="ejemplos" titulo="Ejemplos según tu tipo de negocio" introduccion="Ejemplos ilustrativos de lo que haría el agente en distintos negocios. No son casos de clientes.">

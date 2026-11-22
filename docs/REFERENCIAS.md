@@ -23,5 +23,8 @@ Siempre adaptar a la marca FACTORNEX (colores, tono, MARCA.md). No copiar textos
 - Selector de idiomas (la web es solo en español).
 - Un único botón que solo abre WhatsApp: mantenemos formulario + reserva de llamada + WhatsApp.
 
+### Preguntas frecuentes (revisado 2026-11-22)
+Temas que tubot.es trata en sus FAQ y que adaptamos con palabras propias: ¿es a medida?, ¿qué procesos se automatizan?, ¿y si mi proceso cambia?, ¿funciona con mi número de siempre?, ¿sustituye a mi equipo?, ¿cuánto cuesta? Pendiente valorar "¿y si mi proceso cambia?" y "¿qué procesos se pueden automatizar?" para Servicios.
+
 ### Decidido
 - Precio: no se publica en la v1 (ver DECISIONES.md).

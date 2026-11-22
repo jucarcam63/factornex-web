@@ -32,8 +32,9 @@ Textos en borrador, aprobados "en principio" por el titular; revisar antes del l
 Secciones: hero con demo · qué hace (6 tareas) · cómo funciona (historia en 5 pasos) · tú tienes el control · integraciones · ejemplos por negocio · cómo empezamos (4 pasos) · preguntas frecuentes · llamada final. Textos compartidos con Inicio en `src/contenidos/agente.ts`.
 - Ejemplos (ilustrativos, sin casos reales): peluquería y estética, clínica, taller, reformas, inmobiliaria, fontanería y electricidad; cierre con comercios y despachos de abogados.
 - Informe de actividad: se menciona sin detalle. [PENDIENTE: concretar qué datos incluye y con qué frecuencia; no prometer más hasta saberlo.]
-- Preguntas "¿Cuánto tarda en estar listo?" y "¿Qué necesito para empezar?": [PENDIENTE: respuestas, mostradas en la web como pendientes].
-- Integraciones: igual que Inicio (WhatsApp y Google Calendar; Outlook y CRM por confirmar).
+- Plazo: "puede estar funcionando en una semana, una vez que tenemos la información del negocio" (dato dado por el titular). Qué aporta el cliente: tarifas, horarios, calendario, servicios e información de su negocio.
+- Integraciones (confirmadas por el titular): WhatsApp, Google (Calendar y Gmail), Outlook y CRM; otras herramientas, a consultar en la llamada. Definidas en `src/contenidos/agente.ts`.
+- Preguntas frecuentes añadidas, inspiradas en las dudas habituales de webs similares (sin copiar textos): ¿Sustituye a mi equipo?, ¿Cuánto cuesta? (sin precio, se calcula en la llamada), ¿Funciona con el número de WhatsApp que ya uso? [PENDIENTE: confirmar si se puede usar el número actual del negocio].
 
 ## Menú
 ✅ Inicio · Agente IA · Servicios · Soluciones · Sobre nosotros · Contacto
