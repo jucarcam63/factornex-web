@@ -6,7 +6,8 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - Web de prueba en Vercel: https://factornex-web.vercel.app (despliegue automático desde `main`; protección de Vercel desactivada en este proyecto, 2026-11-22). Commits nuevos con la identidad `jucarcam63` (correo noreply de GitHub); si no, Vercel Hobby no despliega.
 - Tema oscuro publicado en `main` (2026-11-22). Rama de prueba `prueba-modo-oscuro` ya integrada; se puede borrar.
 - Siguiente paso: legales (aviso legal, privacidad, cookies; ahí va el NIF y el correo), luego Servicios y Sobre nosotros. Los enlaces a páginas aún sin crear dan 404.
-- Para activar el formulario: crear cuenta en Resend con el mismo correo que recibirá las consultas, crear una clave API y añadir en Vercel `RESEND_API_KEY` y `CONTACT_TO_EMAIL` (Production y Preview); después, redeploy y enviar una consulta de prueba.
+- Formulario activo: `RESEND_API_KEY` (secreta) y `CONTACT_TO_EMAIL` están en Vercel. Los correos salen de `onboarding@resend.dev` y pueden caer en Spam al principio. Mejora pendiente: verificar el dominio factornex.es en Resend y definir `CONTACT_FROM_EMAIL` cuando exista el dominio.
+- Pendiente de Contacto: enlace público de Calendly en `RESERVA_URL` (`src/config.ts`).
 - Aviso de seguridad conocido: `npm audit` marca 3 vulnerabilidades altas en `path-to-regexp` (dependencia de compilación de `@astrojs/vercel`, no recibe datos de usuarios). La "corrección" que propone npm instala una versión antigua e incompatible; no aplicar. Revisar al actualizar el adaptador.
 - Repositorio: https://github.com/jucarcam63/factornex-web (rama `main` subida, 2026-11-22).
 - Pendiente de tu parte: logo SVG definitivo (ver MARCA.md), URL del sistema de citas y datos legales (DECISIONES.md).
@@ -30,7 +31,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - [x] Agente IA (`/agente-ia`, borrador completo; sin textos [PENDIENTE]; revisar los borradores antes del lanzamiento, ver CONTENIDOS.md)
 - [ ] Servicios (índice + una página por servicio)
 - [ ] Sobre nosotros
-- [x] Contacto con formulario (construido y probado en local; falta activar el envío real: claves de Resend en Vercel, y el enlace de Calendly)
+- [x] Contacto con formulario (activo y probado de punta a punta el 2026-11-22: la consulta de prueba llegó al correo de destino; falta el enlace de Calendly)
 - [ ] Legales: aviso legal, privacidad, cookies
 
 ## Fase 3 — Técnico y lanzamiento
