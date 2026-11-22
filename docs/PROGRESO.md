@@ -5,7 +5,8 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 ## Ahora mismo
 - Web de prueba en Vercel: https://factornex-web.vercel.app (despliegue automático desde `main`; protección de Vercel desactivada en este proyecto, 2026-11-22). Commits nuevos con la identidad `jucarcam63` (correo noreply de GitHub); si no, Vercel Hobby no despliega.
 - Tema oscuro publicado en `main` (2026-11-22). Rama de prueba `prueba-modo-oscuro` ya integrada; se puede borrar.
-- Siguiente paso: legales (aviso legal, privacidad, cookies; ahí va el NIF y el correo), luego Servicios y Sobre nosotros. Los enlaces a páginas aún sin crear dan 404.
+- Siguiente paso: Servicios y Sobre nosotros (y Soluciones, que está en el menú). Los enlaces a páginas aún sin crear dan 404.
+- Para que el NIF salga en el aviso legal publicado: añadir en Vercel la variable `NIF_TITULAR` (tipo Secret, todos los entornos) y redeploy. Mientras tanto, la web publicada muestra "[PENDIENTE: NIF]" ahí.
 - Formulario activo: `RESEND_API_KEY` (secreta) y `CONTACT_TO_EMAIL` están en Vercel. Los correos salen de `onboarding@resend.dev` y pueden caer en Spam al principio. Mejora pendiente: verificar el dominio factornex.es en Resend y definir `CONTACT_FROM_EMAIL` cuando exista el dominio.
 - Pendiente de Contacto: enlace público de Calendly en `RESERVA_URL` (`src/config.ts`).
 - Aviso de seguridad conocido: `npm audit` marca 3 vulnerabilidades altas en `path-to-regexp` (dependencia de compilación de `@astrojs/vercel`, no recibe datos de usuarios). La "corrección" que propone npm instala una versión antigua e incompatible; no aplicar. Revisar al actualizar el adaptador.
@@ -32,7 +33,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - [ ] Servicios (índice + una página por servicio)
 - [ ] Sobre nosotros
 - [x] Contacto con formulario (activo y probado de punta a punta el 2026-11-22: la consulta de prueba llegó al correo de destino; falta el enlace de Calendly)
-- [ ] Legales: aviso legal, privacidad, cookies
+- [x] Legales: aviso legal, privacidad, cookies (borradores completos; ver CONTENIDOS.md; faltan 4 [PENDIENTE] y revisión del asesor)
 
 ## Fase 3 — Técnico y lanzamiento
 - [ ] SEO: títulos, descripciones, sitemap, robots.txt, Open Graph, datos estructurados

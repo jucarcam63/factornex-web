@@ -14,6 +14,8 @@ export default defineConfig({
       RESEND_API_KEY: envField.string({ context: 'server', access: 'secret', optional: true }),
       CONTACT_TO_EMAIL: envField.string({ context: 'server', access: 'secret', optional: true }),
       CONTACT_FROM_EMAIL: envField.string({ context: 'server', access: 'secret', optional: true }),
+      // Solo se muestra en el aviso legal (decisión del titular).
+      NIF_TITULAR: envField.string({ context: 'server', access: 'secret', optional: true }),
     },
   },
   vite: {

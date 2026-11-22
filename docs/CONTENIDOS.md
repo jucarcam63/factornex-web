@@ -99,4 +99,10 @@ Formulario con validación en navegador y servidor, antispam (campo trampa + tie
 Aviso legal · Política de privacidad · Política de cookies.
 - Titular: Juan Carlos Camaño Martínez (persona física). Nombre comercial: FACTORNEX.
 - Domicilio: Avenida de la Constitución 97, 28850 Torrejón de Ardoz, Madrid. NIF: ya facilitado (variable `NIF_TITULAR`, no está en el código), mostrarlo **solo en el aviso legal**.
-- [PENDIENTE] correo de contacto.
+- Correo de contacto: variable `CONTACT_TO_EMAIL`; se muestra solo en aviso legal y privacidad.
+
+### Estado de las páginas legales (2026-11-22) — BORRADORES, revisar con el asesor antes del lanzamiento
+Implementadas en `src/pages/aviso-legal.astro`, `privacidad.astro` y `cookies.astro` (plantilla `src/layouts/Legal.astro`; fecha en `LEGAL_ACTUALIZADO` de `src/config.ts`: actualizarla al cambiar los textos).
+- **Aviso legal:** datos del titular (el NIF solo sale aquí), objeto, condiciones de uso, propiedad intelectual, responsabilidad, nota sobre agentes de IA y ejemplos ficticios, ley aplicable. [PENDIENTE: situación de la marca FACTORNEX en la OEPM.]
+- **Privacidad:** responsable, finalidad y base legal del formulario (consentimiento), encargados (Vercel, Resend, Google/Gmail), derechos y reclamación ante la AEPD, seguridad. [PENDIENTE: plazo concreto de conservación; garantías de transferencias internacionales de cada proveedor; nombrar Calendly cuando esté activo.]
+- **Cookies:** la web **no instala cookies, no usa almacenamiento local y no carga recursos de terceros** (comprobado el 2026-11-22 en la web publicada). Por eso no hay banner. Si se añade analítica o cualquier servicio externo, hay que actualizar esta página y valorar el consentimiento.

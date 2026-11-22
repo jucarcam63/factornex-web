@@ -42,15 +42,14 @@ export const LEGALES = [
 export const EMPRESA = {
   titular: 'Juan Carlos Camaño Martínez',
   nombreComercial: 'FACTORNEX',
-  // El NIF NO se muestra en el pie ni en el resto de la web (decisión del titular).
-  // Solo debe aparecer en el aviso legal, donde es obligatorio. No usarlo en ningún otro sitio.
-  // No se guarda en el código: se lee de la variable de entorno NIF_TITULAR (.env local y Vercel).
-  nif: import.meta.env.NIF_TITULAR ?? '[PENDIENTE: NIF]',
   domicilio: 'Avenida de la Constitución 97, 28850 Torrejón de Ardoz, Madrid',
-  // Correo de contacto: NO se muestra en el pie (evita correo basura). Se mostrará solo en el aviso legal, donde es obligatorio.
-  // Los formularios llegan a CONTACT_TO_EMAIL (variable de entorno, no en el código).
-  correo: '[PENDIENTE: correo para el aviso legal]',
+  // NIF y correo de contacto NO están aquí a propósito (decisión del titular: no mostrarlos en el pie ni en el resto de la web).
+  // Se leen de las variables de entorno NIF_TITULAR y CONTACT_TO_EMAIL, y solo los usan las páginas legales
+  // (aviso legal y privacidad, donde son obligatorios): src/pages/aviso-legal.astro y src/pages/privacidad.astro.
 } as const;
+
+/** Fecha de la última revisión de los textos legales. Actualizar al cambiarlos. */
+export const LEGAL_ACTUALIZADO = '22 de noviembre de 2026';
 
 /** Logo. Provisional hasta tener los SVG definitivos (ver docs/MARCA.md). */
 export const LOGO = {
