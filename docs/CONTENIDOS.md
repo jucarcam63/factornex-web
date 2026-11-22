@@ -34,7 +34,7 @@ Secciones: hero con demo · qué hace (6 tareas) · cómo funciona (historia en 
 - Informe de actividad: se menciona sin detalle. [PENDIENTE: concretar qué datos incluye y con qué frecuencia; no prometer más hasta saberlo.]
 - Plazo: "puede estar funcionando en una semana, una vez que tenemos la información del negocio" (dato dado por el titular). Qué aporta el cliente: tarifas, horarios, calendario, servicios e información de su negocio.
 - Integraciones (confirmadas por el titular): WhatsApp, Google (Calendar y Gmail), Outlook y CRM; otras herramientas, a consultar en la llamada. Definidas en `src/contenidos/agente.ts`.
-- Preguntas frecuentes añadidas, inspiradas en las dudas habituales de webs similares (sin copiar textos): ¿Sustituye a mi equipo?, ¿Cuánto cuesta? (sin precio, se calcula en la llamada), ¿Funciona con el número de WhatsApp que ya uso? [PENDIENTE: confirmar si se puede usar el número actual del negocio].
+- Preguntas frecuentes añadidas, inspiradas en las dudas habituales de webs similares (sin copiar textos): ¿Sustituye a mi equipo?, ¿Cuánto cuesta? (sin precio, se calcula en la llamada), ¿Funciona con el número de WhatsApp que ya uso? Respuesta (dada por el titular): sí; lo recomendable es que esté dado de alta como WhatsApp Business en Meta y, si no lo está, se da de alta como teléfono Business en Meta.
 
 ## Menú
 ✅ Inicio · Agente IA · Servicios · Soluciones · Sobre nosotros · Contacto
