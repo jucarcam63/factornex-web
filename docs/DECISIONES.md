@@ -26,7 +26,7 @@
 | 2026-11-22 | Sin precio publicado en la v1; llamada a la acción: reservar una llamada / diagnóstico gratuito | Precio aún sin definir ni validar con clientes reales. Revisar tras los 3 primeros clientes y publicar "desde X €/mes" si el precio es estable |
 
 ## Pendientes
-1. Datos legales: NIF, domicilio a efectos de notificaciones, correo de contacto y alta censal (autónomo).
+1. Datos legales: correo de contacto y alta censal (autónomo). Ya facilitados: domicilio (Avenida de la Constitución 97, 28850 Torrejón de Ardoz, Madrid; se muestra en el pie) y NIF (guardado solo en el `.env` local, que no se sube a GitHub; para publicarlo hay que añadir la variable `NIF_TITULAR` en Vercel → Settings → Environment Variables; **solo se muestra en el aviso legal**, nunca en el pie ni en otras páginas, por decisión del titular).
 2. Compatibilidad con el empleo actual antes de facturar (consultar con asesor).
 3. Comprobar marca/nombre comercial FACTORNEX en OEPM y registrar el dominio.
 4. Elegir sistema de citas definitivo: páginas de reserva de Google Calendar o Cal.com.

@@ -31,8 +31,11 @@ export const LEGALES = [
 export const EMPRESA = {
   titular: 'Juan Carlos Camaño Martínez',
   nombreComercial: 'FACTORNEX',
-  nif: '[PENDIENTE: NIF]',
-  domicilio: '[PENDIENTE: domicilio a efectos de notificaciones]',
+  // El NIF NO se muestra en el pie ni en el resto de la web (decisión del titular).
+  // Solo debe aparecer en el aviso legal, donde es obligatorio. No usarlo en ningún otro sitio.
+  // No se guarda en el código: se lee de la variable de entorno NIF_TITULAR (.env local y Vercel).
+  nif: import.meta.env.NIF_TITULAR ?? '[PENDIENTE: NIF]',
+  domicilio: 'Avenida de la Constitución 97, 28850 Torrejón de Ardoz, Madrid',
   correo: '[PENDIENTE: correo de contacto]',
 } as const;
 
