@@ -26,6 +26,14 @@ Textos en borrador, aprobados "en principio" por el titular; revisar antes del l
 - Integraciones: solo WhatsApp y Google Calendar. [PENDIENTE: confirmar Outlook, CRM y otros programas antes de mostrarlos.]
 - Preguntas frecuentes y "Qué hace el agente": revisar que cada tarea citada (presupuestar, agendar, recordatorios, avisar, pasar a una persona, atender llamadas) se pueda cumplir de verdad.
 - Botones "Reservar una llamada" → `RESERVA_URL` (provisional: `/contacto`).
+- La demo usa una agente ficticia llamada Lucía, para mostrar que cada negocio elige el nombre del suyo.
+
+### Estado de la página del Agente IA (2026-11-22) — implementada en `src/pages/agente-ia.astro`
+Secciones: hero con demo · qué hace (6 tareas) · cómo funciona (historia en 5 pasos) · tú tienes el control · integraciones · ejemplos por negocio · cómo empezamos (4 pasos) · preguntas frecuentes · llamada final. Textos compartidos con Inicio en `src/contenidos/agente.ts`.
+- Ejemplos (ilustrativos, sin casos reales): peluquería y estética, clínica, taller, reformas, inmobiliaria, fontanería y electricidad; cierre con comercios y despachos de abogados.
+- Informe de actividad: se menciona sin detalle. [PENDIENTE: concretar qué datos incluye y con qué frecuencia; no prometer más hasta saberlo.]
+- Preguntas "¿Cuánto tarda en estar listo?" y "¿Qué necesito para empezar?": [PENDIENTE: respuestas, mostradas en la web como pendientes].
+- Integraciones: igual que Inicio (WhatsApp y Google Calendar; Outlook y CRM por confirmar).
 
 ## Menú
 ✅ Inicio · Agente IA · Servicios · Soluciones · Sobre nosotros · Contacto

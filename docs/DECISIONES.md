@@ -20,6 +20,9 @@
 | 2026-11-22 | Producto estrella: agente de IA que atiende llamadas y WhatsApp (responde, presupuesta, agenda, avisa) | Impacto directo y fácil de entender; captar clientes cuanto antes. Automatización y desarrollo a medida quedan como servicios complementarios |
 | 2026-11-22 | Público: negocios, autónomos y empresas (pymes). Particulares descartados | Foco comercial y mensaje claro |
 | 2026-11-22 | La "X" final de FACTORNEX lleva degradado (azul → turquesa); el resto del nombre, azul noche plano | Enlaza el nombre con los colores del símbolo. Versión de una sola tinta aparte si hace falta |
+| 2026-11-22 | Cada cliente elige el nombre de su agente (Lucía, Antonio…); el agente propio de FACTORNEX se llamará **Nexo** | Quien habla con el agente es el cliente del negocio, que lo verá con la marca de ese negocio. Nexo: corto, serio, enlaza con "conexión" |
+| 2026-11-22 | Informe de actividad del agente al cliente: se menciona sin detalle | Aún no se sabe qué datos permite sacar el sistema. Concretar contenido y frecuencia antes de lanzar |
+| 2026-11-22 | "Cómo empezamos" en 4 pasos: llamada de diagnóstico gratuito → configuración con tarifas y horarios → prueba con el cliente → puesta en marcha | Propuesta aprobada por el titular en principio |
 | 2026-11-22 | Sin precio publicado en la v1; llamada a la acción: reservar una llamada / diagnóstico gratuito | Precio aún sin definir ni validar con clientes reales. Revisar tras los 3 primeros clientes y publicar "desde X €/mes" si el precio es estable |
 
 ## Pendientes
@@ -28,5 +31,5 @@
 3. Comprobar marca/nombre comercial FACTORNEX en OEPM y registrar el dominio.
 4. Elegir sistema de citas definitivo: páginas de reserva de Google Calendar o Cal.com.
 5. Textos del agente (producto estrella), de los servicios complementarios y de los ejemplos de Soluciones.
-6. Nombre del agente (como "empleado" de FACTORNEX) y si tendrá voz/personaje propio.
+6. Voz/personaje propio de Nexo (el nombre ya está decidido) y comprobar que "Nexo" no esté registrado como marca en nuestra clase.
 7. Definir precio y condiciones del agente (para la llamada comercial; publicar más adelante).
