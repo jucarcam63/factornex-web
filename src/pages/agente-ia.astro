@@ -1,0 +1,109 @@
+---
+// Página del producto estrella. Estructura y textos: docs/CONTENIDOS.md (borradores aprobados "en principio").
+import Base from '../layouts/Base.astro';
+import Seccion from '../components/Seccion.astro';
+import Hero from '../components/Hero.astro';
+import ChatDemo from '../components/ChatDemo.astro';
+import Pasos from '../components/Pasos.astro';
+import Faq from '../components/Faq.astro';
+import Tarjeta from '../components/Tarjeta.astro';
+import Boton from '../components/Boton.astro';
+import { RESERVA_URL } from '../config';
+import { pasosHistoria, preguntasComunes } from '../contenidos/agente';
+
+const tareas = [
+  { titulo: 'Responde dudas', texto: 'Contesta lo que tus clientes preguntan siempre: horarios, servicios, ubicación y cómo trabajas.' },
+  { titulo: 'Presupuesta', texto: 'Calcula el presupuesto con las tarifas que tú le indicas.' },
+  { titulo: 'Agenda citas', texto: 'Mira tus huecos libres y reserva la cita en tu calendario.' },
+  { titulo: 'Envía recordatorios', texto: 'Avisa a tus clientes antes de la cita para que haya menos olvidos y huecos vacíos.' },
+  { titulo: 'Te avisa', texto: 'Te comunica lo importante: una cita nueva, una consulta urgente o un cambio.' },
+  { titulo: 'Pasa a una persona', texto: 'Si no sabe responder, o el cliente lo pide, traspasa el caso a tu equipo.' },
+];
+
+const control = [
+  { titulo: 'Siempre dice que es una IA', texto: 'Se presenta como asistente virtual desde el primer mensaje. Tus clientes saben con quién hablan.' },
+  { titulo: 'Una persona, cuando hace falta', texto: 'Si la consulta se sale de lo habitual, no improvisa: pasa el caso a una persona de tu equipo.' },
+  { titulo: 'Trabaja con lo que tú le das', texto: 'Usa tus tarifas, tus horarios y tu forma de trabajar. No inventa lo que no sabe.' },
+  { titulo: 'Un informe de actividad', texto: 'Recibes un informe de la actividad del agente para ver qué está haciendo por tu negocio.' },
+  { titulo: 'Con el nombre que quieras', texto: 'Cada negocio elige cómo se llama su agente: Lucía, Antonio o el nombre que encaje con tu marca.' },
+];
+
+const ejemplos = [
+  { titulo: 'Peluquería y estética', texto: 'Da hueco para cortes y tratamientos, recuerda la cita el día antes y avisa si alguien quiere cambiarla.' },
+  { titulo: 'Clínica', texto: 'Atiende las llamadas fuera de horario, da cita y responde las dudas habituales sobre horarios y servicios.' },
+  { titulo: 'Taller', texto: 'Pide los datos del coche, da una orientación de presupuesto con tus tarifas y reserva el hueco para la revisión.' },
+  { titulo: 'Reformas', texto: 'Recoge qué obra quiere el cliente, en qué zona y para cuándo, y agenda la visita para el presupuesto.' },
+  { titulo: 'Inmobiliaria', texto: 'Responde a quien pregunta por un piso, recoge sus datos y agenda la visita con el comercial.' },
+  { titulo: 'Fontanería y electricidad', texto: 'Atiende las urgencias a cualquier hora, recoge la dirección y el problema y avisa al técnico de guardia.' },
+];
+
+const empezar = [
+  { titulo: 'Reservas una llamada', texto: 'Hacemos un diagnóstico gratuito: cómo atiendes hoy a tus clientes y qué se te escapa.' },
+  { titulo: 'Lo configuramos', texto: 'Preparamos el agente con tus tarifas, tus horarios y tu forma de hablar.' },
+  { titulo: 'Lo probamos contigo', texto: 'Compruebas cómo responde antes de que lo vea ningún cliente.' },
+  { titulo: 'Lo ponemos en marcha', texto: 'El agente empieza a atender tu WhatsApp y tus llamadas.' },
+];
+
+const preguntas = [
+  ...preguntasComunes,
+  { pregunta: '¿Puedo ponerle nombre al agente?', respuesta: 'Sí. Cada negocio elige el nombre de su agente, el que mejor encaje con su marca.' },
+  { pregunta: '¿Cuánto tarda en estar listo?', respuesta: '[PENDIENTE: plazo estimado de puesta en marcha]' },
+  { pregunta: '¿Qué necesito para empezar?', respuesta: '[PENDIENTE: qué debe aportar el negocio: tarifas, horarios, calendario…]' },
+];
+---
+<Base titulo="Agente de IA para WhatsApp y llamadas" descripcion="Un agente de IA atiende el WhatsApp y las llamadas de tu negocio: responde dudas, presupuesta, agenda citas y avisa. Si no sabe algo, pasa el caso a una persona.">
+  <Hero
+    etiqueta="Agente de IA"
+    titulo="Un agente de IA que atiende tu WhatsApp y tus llamadas."
+    subtitulo="Responde a tus clientes, presupuesta, agenda citas y te avisa, a cualquier hora. Si no sabe algo, pasa el caso a una persona."
+    principal={{ texto: 'Reservar una llamada', href: RESERVA_URL }}
+    secundario={{ texto: 'Ver cómo funciona', href: '#como-funciona' }}
+  >
+    <ChatDemo />
+  </Hero>
+
+  <Seccion fondo="claro" id="que-hace" titulo="Qué hace, tarea a tarea" introduccion="Un empleado que atiende a tus clientes mientras tú te dedicas a tu trabajo.">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {tareas.map((t) => <Tarjeta titulo={t.titulo}>{t.texto}</Tarjeta>)}
+    </div>
+  </Seccion>
+
+  <Seccion id="como-funciona" titulo="Cómo funciona, con un ejemplo" introduccion="Así sería un domingo por la tarde en un negocio con el agente funcionando.">
+    <Pasos pasos={pasosHistoria} />
+  </Seccion>
+
+  <Seccion fondo="claro" id="control" titulo="Tú tienes el control" introduccion="Un agente de IA solo sirve si puedes fiarte de él. Por eso funciona con reglas claras.">
+    <div class="grid gap-6 md:grid-cols-2">
+      {control.map((c, i) => (
+        <Tarjeta titulo={c.titulo} class={i === control.length - 1 ? 'md:col-span-2' : ''}>{c.texto}</Tarjeta>
+      ))}
+    </div>
+  </Seccion>
+
+  <Seccion id="integraciones" titulo="Se conecta con lo que ya usas" introduccion="El agente trabaja con tus herramientas del día a día, por ejemplo para ver tus huecos y reservar citas en tu calendario.">
+    <div class="grid gap-6 md:grid-cols-3">
+      <Tarjeta titulo="WhatsApp">Canal por el que tus clientes te escriben.</Tarjeta>
+      <Tarjeta titulo="Google Calendar">Consulta tus huecos y agenda las citas.</Tarjeta>
+      <Tarjeta titulo="Otras herramientas">[PENDIENTE: confirmar Outlook y CRM antes de mostrarlos]</Tarjeta>
+    </div>
+  </Seccion>
+
+  <Seccion fondo="claro" id="ejemplos" titulo="Ejemplos según tu tipo de negocio" introduccion="Ejemplos ilustrativos de lo que haría el agente en distintos negocios. No son casos de clientes.">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {ejemplos.map((e) => <Tarjeta titulo={e.titulo}>{e.texto}</Tarjeta>)}
+    </div>
+    <p class="mt-8 text-pizarra">También para comercios, despachos de abogados y muchos otros negocios.</p>
+  </Seccion>
+
+  <Seccion id="empezar" titulo="Cómo empezamos" introduccion="Cuatro pasos, sin complicaciones.">
+    <Pasos pasos={empezar} />
+  </Seccion>
+
+  <Seccion fondo="claro" id="preguntas" titulo="Preguntas frecuentes">
+    <Faq preguntas={preguntas} />
+  </Seccion>
+
+  <Seccion fondo="noche" id="reserva" titulo="Hablemos de tu negocio" introduccion="Reserva una llamada de diagnóstico gratuito y te contamos cómo encajaría un agente en tu día a día.">
+    <Boton href={RESERVA_URL} variante="negativo">Reservar una llamada</Boton>
+  </Seccion>
+</Base>
