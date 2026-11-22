@@ -1,0 +1,132 @@
+---
+// Servicios (v1: una sola página con las tres secciones). Textos en borrador: docs/CONTENIDOS.md.
+// Los ejemplos son ilustrativos, no casos de clientes. Sin precios publicados (decisión de DECISIONES.md).
+import Base from '../layouts/Base.astro';
+import Seccion from '../components/Seccion.astro';
+import Hero from '../components/Hero.astro';
+import Tarjeta from '../components/Tarjeta.astro';
+import Pasos from '../components/Pasos.astro';
+import Faq from '../components/Faq.astro';
+import Boton from '../components/Boton.astro';
+import { RESERVA_URL } from '../config';
+
+const indice = [
+  { texto: 'Agente de IA', href: '#agente-ia' },
+  { texto: 'Automatización de procesos', href: '#automatizacion' },
+  { texto: 'Desarrollo a medida', href: '#desarrollo' },
+  { texto: 'Cómo trabajamos', href: '#como-trabajamos' },
+];
+
+const automatizacion = {
+  problemas: [
+    'Introducir los mismos datos una y otra vez en varias herramientas.',
+    'Documentos repetitivos que se preparan a mano.',
+    'Tareas administrativas que te quitan tiempo de lo importante.',
+    'Seguimiento de clientes que depende de acordarte.',
+    'Información repartida en varias herramientas.',
+    'Informes que llevan demasiado tiempo.',
+  ],
+  ejemplos: [
+    'Presupuestos y facturas que se preparan solos a partir de un formulario o un correo.',
+    'Correos y documentos que se clasifican y se archivan solos.',
+    'Avisos y mensajes automáticos de seguimiento a tus clientes.',
+    'Datos que se sincronizan entre tus herramientas sin copiarlos a mano.',
+    'Informes que se generan solos con los datos de tus herramientas.',
+  ],
+};
+
+const desarrollo = {
+  problemas: [
+    'Ninguna herramienta del mercado encaja exactamente con tu forma de trabajar.',
+    'Usas hojas de cálculo para algo que ya se te ha quedado grande.',
+    'Necesitas ver tus datos de un vistazo, en un solo sitio.',
+    'Tus herramientas no se hablan entre sí.',
+  ],
+  ejemplos: [
+    'Una aplicación web para gestionar tus clientes, citas o pedidos a tu manera.',
+    'Un panel de control con los datos que de verdad te importan.',
+    'Una herramienta interna para tu equipo, con un diseño claro y fácil de usar.',
+    'Una conexión entre dos programas que hoy no se comunican.',
+  ],
+};
+
+const pasos = [
+  { titulo: 'Analizamos', texto: 'Estudiamos cómo trabajas hoy, qué herramientas usas y dónde pierdes tiempo. Es el primer paso de cualquier proyecto.' },
+  { titulo: 'Diseñamos', texto: 'Te proponemos la solución y cómo encajaría con lo que ya usas, antes de construir nada.' },
+  { titulo: 'Desarrollamos', texto: 'Construimos la solución y la probamos contigo.' },
+  { titulo: 'Mejoramos', texto: 'Revisamos cómo funciona en el día a día y ajustamos lo que haga falta.' },
+];
+
+const preguntas = [
+  { pregunta: '¿Es una solución a medida o un producto cerrado?', respuesta: 'Se adapta a tu negocio. Partimos de cómo trabajas y de las herramientas que ya usas, y construimos o configuramos lo que hace falta.' },
+  { pregunta: '¿Qué procesos se pueden automatizar?', respuesta: 'Sobre todo los repetitivos y con reglas claras: introducir datos, enviar avisos, preparar documentos, clasificar correos, generar informes. En la llamada de diagnóstico lo revisamos contigo.' },
+  { pregunta: '¿Tengo que cambiar las herramientas que uso?', respuesta: 'No necesariamente. Siempre que sea posible, conectamos las que ya usas para que trabajen juntas.' },
+  { pregunta: '¿Y si mi forma de trabajar cambia?', respuesta: 'Es normal que cambie. Por eso revisamos cada solución después de ponerla en marcha y la ajustamos cuando hace falta.' },
+  { pregunta: '¿Cuánto cuesta?', respuesta: 'Depende de lo que necesites. En la llamada de diagnóstico gratuito lo calculamos contigo, sin compromiso.' },
+];
+---
+<Base titulo="Servicios de IA, automatización y desarrollo a medida" descripcion="Agente de IA para WhatsApp y llamadas, automatización de procesos y desarrollo de software a medida para negocios, autónomos y pymes.">
+  <Hero
+    etiqueta="Servicios"
+    titulo="Soluciones inteligentes para tu negocio."
+    subtitulo="Un agente de IA que atiende a tus clientes, automatización de las tareas que te quitan tiempo y herramientas hechas a tu medida. Empezamos siempre por entender cómo trabajas."
+    principal={{ texto: 'Reservar una llamada', href: RESERVA_URL }}
+    secundario={{ texto: 'Ver el agente de IA', href: '/agente-ia' }}
+  >
+    <nav aria-label="En esta página" class="borde-degradado rounded-2xl p-6">
+      <p class="font-titulos text-lg font-bold">En esta página</p>
+      <ul class="mt-4 space-y-3">
+        {indice.map((i) => (
+          <li>
+            <a href={i.href} class="inline-flex items-center gap-2 text-texto transition hover:translate-x-1 hover:text-turquesa motion-reduce:transition-none motion-reduce:hover:transform-none">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-turquesa" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              {i.texto}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </Hero>
+
+  <Seccion fondo="claro" id="agente-ia" titulo="Agente de IA" introduccion="Nuestro servicio estrella: un agente de IA que atiende el WhatsApp y las llamadas de tu negocio a cualquier hora. Responde, presupuesta según tus tarifas, agenda citas, avisa a tu equipo y pasa el caso a una persona cuando hace falta. Siempre se identifica como IA.">
+    <Boton href="/agente-ia">Ver cómo funciona</Boton>
+  </Seccion>
+
+  <Seccion id="automatizacion" titulo="Automatización de procesos" introduccion="Quitamos de en medio el trabajo repetitivo: tareas administrativas, conexión entre tus herramientas, avisos, sincronización de datos y seguimiento comercial.">
+    <div class="grid gap-6 md:grid-cols-2">
+      <Tarjeta titulo="Problemas que resuelve">
+        <ul class="lista-puntos">{automatizacion.problemas.map((p) => <li>{p}</li>)}</ul>
+      </Tarjeta>
+      <Tarjeta titulo="Ejemplos de aplicación">
+        <ul class="lista-puntos">{automatizacion.ejemplos.map((p) => <li>{p}</li>)}</ul>
+        <p class="mt-4 text-xs">Ejemplos ilustrativos de lo que podemos hacer. No son casos de clientes.</p>
+      </Tarjeta>
+    </div>
+    <div class="mt-8"><Boton href={RESERVA_URL}>Hablar de mi caso</Boton></div>
+  </Seccion>
+
+  <Seccion fondo="claro" id="desarrollo" titulo="Desarrollo a medida" introduccion="Cuando lo que existe no encaja, lo hacemos a tu medida: aplicaciones web, paneles de control, herramientas de gestión e integraciones, con el diseño incluido.">
+    <div class="grid gap-6 md:grid-cols-2">
+      <Tarjeta titulo="Problemas que resuelve">
+        <ul class="lista-puntos">{desarrollo.problemas.map((p) => <li>{p}</li>)}</ul>
+      </Tarjeta>
+      <Tarjeta titulo="Ejemplos de aplicación">
+        <ul class="lista-puntos">{desarrollo.ejemplos.map((p) => <li>{p}</li>)}</ul>
+        <p class="mt-4 text-xs">Ejemplos ilustrativos de lo que podemos hacer. No son casos de clientes.</p>
+      </Tarjeta>
+    </div>
+    <div class="mt-8"><Boton href={RESERVA_URL}>Hablar de mi caso</Boton></div>
+  </Seccion>
+
+  <Seccion id="como-trabajamos" titulo="Cómo trabajamos" introduccion="Cada proyecto empieza con una llamada de diagnóstico gratuito. De ahí seguimos paso a paso.">
+    <Pasos pasos={pasos} />
+  </Seccion>
+
+  <Seccion fondo="claro" id="preguntas" titulo="Preguntas frecuentes">
+    <Faq preguntas={preguntas} />
+  </Seccion>
+
+  <Seccion fondo="noche" id="reserva" titulo="Hablemos de tu negocio" introduccion="Reserva una llamada de diagnóstico gratuito y te contamos qué podríamos mejorar en tu día a día.">
+    <Boton href={RESERVA_URL} variante="negativo">Reservar una llamada</Boton>
+  </Seccion>
+</Base>

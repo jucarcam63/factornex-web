@@ -61,6 +61,15 @@
     background-image: linear-gradient(180deg, #050e24 0%, #0a2e62 48%, #050e24 100%);
   }
 
+  /* Listas con punto turquesa (servicios, ejemplos) */
+  .lista-puntos { margin-top: 0.25rem; }
+  .lista-puntos li { position: relative; padding-left: 1.5rem; line-height: 1.6; }
+  .lista-puntos li + li { margin-top: 0.6rem; }
+  .lista-puntos li::before {
+    content: ""; position: absolute; left: 0; top: 0.62em; width: 0.5rem; height: 0.5rem; border-radius: 9999px;
+    background: linear-gradient(135deg, var(--color-turquesa), var(--color-medio));
+  }
+
   /* Texto largo de las páginas legales */
   .texto-legal h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 0.75rem; }
   .texto-legal h3 { font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }

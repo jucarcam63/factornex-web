@@ -74,6 +74,9 @@ Demostraciones propias (p. ej. agente de voz de clínica dental) se pueden mostr
 7. **Llamada final** ✏️ — "Empecemos a mejorar la forma de trabajar de tu empresa." Botón: Hablemos de tu proyecto.
 8. **Pie** ⏳ — logo, descriptor, enlaces, contacto, aviso legal, privacidad, cookies, datos fiscales.
 
+### Estado de la página de Servicios (2026-11-22) — implementada en `src/pages/servicios.astro`
+Una sola página (v1): hero con índice · Agente IA (resumen y enlace a `/agente-ia`) · Automatización de procesos · Desarrollo a medida (cada una con "Problemas que resuelve" y "Ejemplos de aplicación", marcados como ilustrativos) · Cómo trabajamos (Analizamos, Diseñamos, Desarrollamos, Mejoramos; la consultoría es el primer paso, no un servicio aparte) · preguntas frecuentes (inspiradas en las dudas habituales, con palabras propias) · llamada final. Sin precios. Las tarjetas de Inicio enlazan con `/servicios#automatizacion` y `/servicios#desarrollo`. Textos en borrador: revisar antes del lanzamiento.
+
 ## Servicios (una página por servicio)
 Estructura de cada página: qué es · problemas que resuelve · ejemplos de aplicación · cómo trabajamos · preguntas frecuentes · llamada a la acción.
 ⏳ Textos de cada servicio.
