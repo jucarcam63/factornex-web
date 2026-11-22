@@ -4,7 +4,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 
 ## Ahora mismo
 - Web de prueba en Vercel: https://factornex-web.vercel.app (despliegue automático desde `main`; protección de Vercel desactivada en este proyecto, 2026-11-22). Commits nuevos con la identidad `jucarcam63` (correo noreply de GitHub); si no, Vercel Hobby no despliega.
-- Siguiente paso: Fase 2 (páginas), empezando por Inicio.
+- Siguiente paso: Fase 2, página del Agente IA (`/agente-ia`), luego Servicios, Sobre nosotros, Contacto y legales. Los enlaces de Inicio a páginas aún sin crear dan 404.
 - Repositorio: https://github.com/jucarcam63/factornex-web (rama `main` subida, 2026-11-22).
 - Pendiente de tu parte: logo SVG definitivo (ver MARCA.md), URL del sistema de citas y datos legales (DECISIONES.md).
 
@@ -23,7 +23,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - [x] Subir a GitHub y conectar con Vercel (web de prueba)
 
 ## Fase 2 — Páginas
-- [ ] Inicio
+- [x] Inicio (borrador completo, 8 secciones; textos por revisar, ver CONTENIDOS.md)
 - [ ] Servicios (índice + una página por servicio)
 - [ ] Sobre nosotros
 - [ ] Contacto con formulario funcional

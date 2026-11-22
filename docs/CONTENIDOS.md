@@ -19,6 +19,14 @@ Estado de cada bloque: ✅ aprobado · ✏️ borrador (del documento inicial, r
 8. Llamada final: reservar una llamada.
 Los textos ✏️ de abajo se reutilizan dentro de este orden.
 
+### Estado de la página de Inicio (2026-11-22) — implementada en `src/pages/index.astro`
+Textos en borrador, aprobados "en principio" por el titular; revisar antes del lanzamiento:
+- Hero: *Que ninguna llamada ni mensaje de tu negocio se quede sin respuesta.* (el titular lo da por bueno "de momento"). WhatsApp va por delante de las llamadas, porque el contestador de WhatsApp es el primer producto; la demo es una conversación de WhatsApp.
+- Demo: negocio ficticio ("Peluquería Ejemplo"), sin precios ni cifras, etiquetada como ejemplo.
+- Integraciones: solo WhatsApp y Google Calendar. [PENDIENTE: confirmar Outlook, CRM y otros programas antes de mostrarlos.]
+- Preguntas frecuentes y "Qué hace el agente": revisar que cada tarea citada (presupuestar, agendar, recordatorios, avisar, pasar a una persona, atender llamadas) se pueda cumplir de verdad.
+- Botones "Reservar una llamada" → `RESERVA_URL` (provisional: `/contacto`).
+
 ## Menú
 ✅ Inicio · Agente IA · Servicios · Soluciones · Sobre nosotros · Contacto
 Botón destacado: ✏️ "Reservar una llamada" (abre el sistema de citas). Secundario en páginas: "Solicitar asesoramiento" → Contacto.

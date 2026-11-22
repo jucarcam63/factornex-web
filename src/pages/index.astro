@@ -1,12 +1,95 @@
 ---
-// Inicio provisional: la página real llega en la Fase 2 (orden de secciones en docs/CONTENIDOS.md).
+// Inicio. Orden de secciones y textos: docs/CONTENIDOS.md. Textos marcados [BORRADOR] en el documento.
 import Base from '../layouts/Base.astro';
 import Seccion from '../components/Seccion.astro';
+import Hero from '../components/Hero.astro';
+import ChatDemo from '../components/ChatDemo.astro';
+import Pasos from '../components/Pasos.astro';
+import Faq from '../components/Faq.astro';
+import Tarjeta from '../components/Tarjeta.astro';
 import Boton from '../components/Boton.astro';
 import { RESERVA_URL, SITE } from '../config';
+
+const pasos = [
+  { titulo: 'Escribe', texto: 'Un domingo a las 19:42, una clienta pregunta por WhatsApp si tienes hueco. Tu negocio está cerrado.' },
+  { titulo: 'Responde', texto: 'El agente contesta enseguida y se presenta como asistente virtual.' },
+  { titulo: 'Entiende', texto: 'Averigua qué servicio necesita, para cuándo y qué más quiere saber.' },
+  { titulo: 'Presupuesta y agenda', texto: 'Calcula el presupuesto con tus tarifas y reserva el hueco en tu calendario.' },
+  { titulo: 'Te avisa', texto: 'Recibes el aviso con los datos del cliente. El lunes solo tienes que atenderla.' },
+];
+
+const preguntas = [
+  { pregunta: '¿Atiende llamadas además de WhatsApp?', respuesta: 'Sí. El agente atiende tanto los mensajes de WhatsApp como las llamadas de tu negocio, a cualquier hora.' },
+  { pregunta: '¿Y si se equivoca?', respuesta: 'Trabaja con la información y las tarifas que tú le facilitas. Cuando no está seguro o la consulta se sale de lo habitual, no improvisa: pasa el caso a una persona de tu equipo.' },
+  { pregunta: '¿Cómo paso a una persona?', respuesta: 'Cuando el agente no sabe responder, o cuando el cliente lo pide, avisa a tu equipo para que lo retome una persona.' },
+  { pregunta: '¿Se conecta con mi programa?', respuesta: 'Se conecta con herramientas como tu calendario. Si usas otro programa de gestión, lo vemos en la llamada.' },
+  { pregunta: '¿Mis clientes sabrán que es una IA?', respuesta: 'Sí. El agente siempre se presenta como asistente virtual de IA. Es lo correcto y lo exige la normativa europea sobre inteligencia artificial.' },
+];
 ---
-<Base titulo={`${SITE.nombre} — ${SITE.descriptor}`} descripcion="FACTORNEX: inteligencia artificial, automatización y desarrollo a medida para negocios, autónomos y pymes.">
-  <Seccion id="inicio" titulo={SITE.eslogan} introduccion="[PENDIENTE: contenido de Inicio — Fase 2]">
-    <Boton href={RESERVA_URL}>Reservar una llamada</Boton>
+<Base titulo={`${SITE.nombre} — ${SITE.descriptor}`} descripcion="Agente de IA que atiende el WhatsApp y las llamadas de tu negocio: responde, presupuesta, agenda citas y avisa. Para pymes, autónomos y comercios.">
+  <Hero
+    etiqueta="Agente de IA para WhatsApp y llamadas"
+    titulo="Que ninguna llamada ni mensaje de tu negocio se quede sin respuesta."
+    subtitulo="Un agente de IA atiende tu WhatsApp y tus llamadas a cualquier hora: responde, presupuesta según tus tarifas, agenda la cita y te avisa. Si no sabe algo, pasa el caso a una persona."
+    principal={{ texto: 'Reservar una llamada', href: RESERVA_URL }}
+    secundario={{ texto: 'Ver cómo funciona', href: '#como-funciona' }}
+  >
+    <ChatDemo />
+  </Hero>
+
+  <Seccion fondo="claro" id="problema" titulo="¿Cuántos clientes se pierden por no contestar a tiempo?" introduccion="Atender bien también significa estar disponible cuando el cliente pregunta.">
+    <div class="grid gap-6 md:grid-cols-3">
+      <Tarjeta titulo="Llamadas que no se cogen">Mientras atiendes a un cliente o estás fuera, suena el teléfono y nadie contesta.</Tarjeta>
+      <Tarjeta titulo="Mensajes fuera de horario">Quien escribe por la noche o en fin de semana espera una respuesta. Si no llega, puede acudir a otro negocio.</Tarjeta>
+      <Tarjeta titulo="Respuestas que llevan tiempo">Contestar a mano, preguntando tarifas y huecos uno a uno, te quita tiempo de lo que de verdad sabes hacer.</Tarjeta>
+    </div>
+  </Seccion>
+
+  <Seccion id="como-funciona" titulo="Cómo funciona, con un ejemplo" introduccion="Así sería un domingo por la tarde en un negocio con el agente funcionando.">
+    <Pasos pasos={pasos} />
+  </Seccion>
+
+  <Seccion fondo="claro" id="que-hace" titulo="Un empleado que nunca cierra" introduccion="El agente es como una persona más de tu equipo, con sus tareas claras.">
+    <dl class="grid gap-6 md:grid-cols-2">
+      <div class="rounded-2xl border border-noche/10 bg-white p-6">
+        <dt class="font-titulos text-lg font-bold">Canales</dt>
+        <dd class="mt-2 text-pizarra">WhatsApp y llamadas.</dd>
+      </div>
+      <div class="rounded-2xl border border-noche/10 bg-white p-6">
+        <dt class="font-titulos text-lg font-bold">Horario</dt>
+        <dd class="mt-2 text-pizarra">Las 24 horas, todos los días.</dd>
+      </div>
+      <div class="rounded-2xl border border-noche/10 bg-white p-6">
+        <dt class="font-titulos text-lg font-bold">Qué hace</dt>
+        <dd class="mt-2 text-pizarra">Responde dudas, presupuesta según tus tarifas, agenda citas, envía recordatorios y avisa a tu equipo.</dd>
+      </div>
+      <div class="rounded-2xl border border-noche/10 bg-white p-6">
+        <dt class="font-titulos text-lg font-bold">Cuando no sabe</dt>
+        <dd class="mt-2 text-pizarra">Pasa el caso a una persona. Y siempre dice que es una IA.</dd>
+      </div>
+    </dl>
+  </Seccion>
+
+  <Seccion id="integraciones" titulo="Se conecta con lo que ya usas" introduccion="El agente trabaja con tus herramientas del día a día, por ejemplo para ver tus huecos y reservar citas en tu calendario.">
+    <div class="grid gap-6 md:grid-cols-3">
+      <Tarjeta titulo="WhatsApp">Canal por el que tus clientes te escriben.</Tarjeta>
+      <Tarjeta titulo="Google Calendar">Consulta tus huecos y agenda las citas.</Tarjeta>
+      <Tarjeta titulo="Otras herramientas">[PENDIENTE: confirmar Outlook y CRM antes de mostrarlos]</Tarjeta>
+    </div>
+  </Seccion>
+
+  <Seccion fondo="claro" id="mas-servicios" titulo="Y si necesitas algo más" introduccion="Además del agente, creamos soluciones a medida para el resto de tu negocio.">
+    <div class="grid gap-6 md:grid-cols-2">
+      <Tarjeta titulo="Automatización de procesos" href="/servicios">Tareas administrativas, conexión entre herramientas, avisos y seguimiento comercial, sin repetir el trabajo a mano.</Tarjeta>
+      <Tarjeta titulo="Desarrollo a medida" href="/servicios">Aplicaciones web, paneles de control y herramientas de gestión, con el diseño incluido.</Tarjeta>
+    </div>
+  </Seccion>
+
+  <Seccion id="preguntas" titulo="Preguntas frecuentes">
+    <Faq preguntas={preguntas} />
+  </Seccion>
+
+  <Seccion fondo="noche" id="reserva" titulo="Hablemos de tu negocio" introduccion="Reserva una llamada de diagnóstico gratuito y te contamos cómo encajaría un agente en tu día a día.">
+    <Boton href={RESERVA_URL} variante="negativo">Reservar una llamada</Boton>
   </Seccion>
 </Base>
