@@ -1,0 +1,75 @@
+---
+import Logo from './Logo.astro';
+import Boton from './Boton.astro';
+import Contenedor from './Contenedor.astro';
+import { MENU, RESERVA_URL, SITE } from '../config';
+const ruta = Astro.url.pathname.replace(/\/$/, '') || '/';
+const activo = (href: string) => (href === '/' ? ruta === '/' : ruta === href || ruta.startsWith(href + '/'));
+---
+<a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-noche focus:px-4 focus:py-2 focus:text-white">
+  Saltar al contenido
+</a>
+<header class="sticky top-0 z-40 border-b border-noche/10 bg-white/95 backdrop-blur">
+  <Contenedor class="flex items-center justify-between gap-4 py-3">
+    <a href="/" aria-label={`${SITE.nombre}, ir al inicio`}>
+      <Logo class="h-11 sm:h-12" />
+    </a>
+
+    <nav aria-label="Principal" class="hidden items-center gap-1 lg:flex">
+      {MENU.map((e) => (
+        <a
+          href={e.href}
+          aria-current={activo(e.href) ? 'page' : undefined}
+          class:list={['rounded-md px-3 py-2 text-sm font-medium hover:text-medio', activo(e.href) ? 'text-medio' : 'text-noche']}
+        >{e.texto}</a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <div class="hidden sm:block">
+        <Boton href={RESERVA_URL} class="!py-2 text-sm">Reservar una llamada</Boton>
+      </div>
+      <button
+        type="button"
+        id="menu-boton"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-noche/20 lg:hidden"
+        aria-expanded="false"
+        aria-controls="menu-movil"
+        aria-label="Abrir menú"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </Contenedor>
+
+  <nav id="menu-movil" aria-label="Principal (móvil)" class="hidden border-t border-noche/10 bg-white lg:hidden">
+    <Contenedor class="flex flex-col py-3">
+      {MENU.map((e) => (
+        <a
+          href={e.href}
+          aria-current={activo(e.href) ? 'page' : undefined}
+          class:list={['rounded-md px-2 py-3 font-medium', activo(e.href) ? 'text-medio' : 'text-noche']}
+        >{e.texto}</a>
+      ))}
+      <Boton href={RESERVA_URL} class="mt-3">Reservar una llamada</Boton>
+    </Contenedor>
+  </nav>
+</header>
+
+<script>
+  const boton = document.getElementById('menu-boton');
+  const menu = document.getElementById('menu-movil');
+  function alternar(abrir?: boolean) {
+    if (!boton || !menu) return;
+    const abierto = abrir ?? boton.getAttribute('aria-expanded') !== 'true';
+    boton.setAttribute('aria-expanded', String(abierto));
+    boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+    menu.classList.toggle('hidden', !abierto);
+  }
+  boton?.addEventListener('click', () => alternar());
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { alternar(false); boton?.focus(); }
+  });
+</script>

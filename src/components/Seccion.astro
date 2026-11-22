@@ -1,0 +1,29 @@
+---
+import Contenedor from './Contenedor.astro';
+interface Props {
+  fondo?: 'blanco' | 'claro' | 'noche' | 'degradado';
+  id?: string;
+  titulo?: string;
+  introduccion?: string;
+  class?: string;
+}
+const { fondo = 'blanco', id, titulo, introduccion, class: clase = '' } = Astro.props;
+const fondos = {
+  blanco: 'bg-white text-noche',
+  claro: 'bg-claro text-noche',
+  noche: 'bg-noche text-white',
+  degradado: 'bg-gradient-to-br from-intenso via-medio to-turquesa text-white',
+};
+const oscuro = fondo === 'noche' || fondo === 'degradado';
+---
+<section id={id} class:list={['py-16 sm:py-24', fondos[fondo], clase]} aria-labelledby={titulo && id ? `${id}-titulo` : undefined}>
+  <Contenedor>
+    {(titulo || introduccion) && (
+      <header class="mb-10 max-w-3xl sm:mb-14">
+        {titulo && <h2 id={id ? `${id}-titulo` : undefined} class="text-3xl sm:text-4xl">{titulo}</h2>}
+        {introduccion && <p class:list={['mt-4 text-lg', oscuro ? 'text-white/90' : 'text-pizarra']}>{introduccion}</p>}
+      </header>
+    )}
+    <slot />
+  </Contenedor>
+</section>

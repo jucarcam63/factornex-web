@@ -1,0 +1,17 @@
+---
+// Logo provisional recortado solo por CSS (el archivo no se modifica).
+// Cuando existan los SVG definitivos (docs/MARCA.md), cambiar LOGO en src/config.ts y este recorte.
+import { LOGO } from '../config';
+interface Props { class?: string }
+const { class: clase = '' } = Astro.props;
+---
+<span class:list={['relative block aspect-[815/290] overflow-hidden', clase]}>
+  <img
+    src={LOGO.src}
+    alt={LOGO.alt}
+    width={LOGO.ancho}
+    height={LOGO.alto}
+    class="absolute top-0 left-0 h-auto w-[125.6%] max-w-none"
+    style="margin-left:-12.27%;margin-top:-17.18%"
+  />
+</span>

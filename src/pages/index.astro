@@ -1,0 +1,12 @@
+---
+// Inicio provisional: la página real llega en la Fase 2 (orden de secciones en docs/CONTENIDOS.md).
+import Base from '../layouts/Base.astro';
+import Seccion from '../components/Seccion.astro';
+import Boton from '../components/Boton.astro';
+import { RESERVA_URL, SITE } from '../config';
+---
+<Base titulo={`${SITE.nombre} — ${SITE.descriptor}`} descripcion="FACTORNEX: inteligencia artificial, automatización y desarrollo a medida para negocios, autónomos y pymes.">
+  <Seccion id="inicio" titulo={SITE.eslogan} introduccion="[PENDIENTE: contenido de Inicio — Fase 2]">
+    <Boton href={RESERVA_URL}>Reservar una llamada</Boton>
+  </Seccion>
+</Base>

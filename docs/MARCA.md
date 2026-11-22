@@ -72,7 +72,8 @@ Nota: en el logo provisional de FACTORNEX el texto salió algo más claro (#192D
 | Fondo principal | Blanco | #FFFFFF |
 
 - Proporción orientativa: 60 % blanco y claros · 30 % azul noche · 10 % azules y turquesa.
-- [PENDIENTE] Comprobar contraste AA de texto blanco sobre #0B7BBB; si no llega, oscurecer el botón.
+- Contraste comprobado (2026-11-22): blanco sobre #0B7BBB = 4,60:1 (cumple AA, justo). #858585 sobre blanco = 3,69:1 (no cumple) → en la web el gris de texto es **#6B6B6B** (5,33:1 sobre blanco, 4,87:1 sobre #F2F5F8). Azul noche sobre turquesa = 6,90:1.
+- Blanco sobre turquesa (#2ACED7) no cumple: en secciones con degradado, colocar el texto en la zona azul oscura.
 
 ## Tipografías
 - Logo: la del archivo del logo (no se recompone con otra fuente). [PENDIENTE: identificar la fuente exacta]
