@@ -7,10 +7,10 @@ const columnas = pasos.length === 4 ? 'md:grid-cols-4' : 'md:grid-cols-5';
 ---
 <ol class:list={['grid gap-6', columnas]}>
   {pasos.map((p, i) => (
-    <li class="relative rounded-2xl border border-noche/10 bg-white p-5">
-      <span class="flex h-9 w-9 items-center justify-center rounded-full bg-noche font-titulos font-bold text-white" aria-hidden="true">{i + 1}</span>
-      <h3 class="mt-4 text-lg"><span class="sr-only">Paso {i + 1}: </span>{p.titulo}</h3>
-      <p class="mt-2 text-sm text-pizarra">{p.texto}</p>
+    <li class="relative rounded-2xl border border-borde bg-superficie p-5">
+      <span class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-medio to-turquesa font-titulos font-bold text-noche" aria-hidden="true">{i + 1}</span>
+      <h3 class="mt-4 text-lg text-texto"><span class="sr-only">Paso {i + 1}: </span>{p.titulo}</h3>
+      <p class="mt-2 text-sm text-suave">{p.texto}</p>
     </li>
   ))}
 </ol>

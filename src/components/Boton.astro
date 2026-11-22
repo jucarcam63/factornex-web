@@ -5,9 +5,10 @@ interface Props {
   class?: string;
 }
 const { href, variante = 'principal', class: clase = '' } = Astro.props;
+// Tema oscuro: principal en azul medio (blanco 4,6:1), secundario con borde claro, negativo en blanco.
 const estilos = {
   principal: 'bg-medio text-white hover:bg-turquesa hover:text-noche',
-  secundario: 'border-2 border-noche text-noche hover:bg-noche hover:text-white',
+  secundario: 'border-2 border-texto/40 text-texto hover:border-turquesa hover:text-turquesa',
   negativo: 'bg-white text-noche hover:bg-turquesa',
 };
 ---

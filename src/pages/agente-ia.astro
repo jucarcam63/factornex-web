@@ -87,14 +87,14 @@ const preguntas = [
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       {integraciones.map((i) => <Tarjeta titulo={i.titulo}>{i.texto}</Tarjeta>)}
     </div>
-    <p class="mt-8 text-pizarra">{notaIntegraciones}</p>
+    <p class="mt-8 text-suave">{notaIntegraciones}</p>
   </Seccion>
 
   <Seccion fondo="claro" id="ejemplos" titulo="Ejemplos según tu tipo de negocio" introduccion="Ejemplos ilustrativos de lo que haría el agente en distintos negocios. No son casos de clientes.">
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {ejemplos.map((e) => <Tarjeta titulo={e.titulo}>{e.texto}</Tarjeta>)}
     </div>
-    <p class="mt-8 text-pizarra">También para comercios, despachos de abogados y muchos otros negocios.</p>
+    <p class="mt-8 text-suave">También para comercios, despachos de abogados y muchos otros negocios.</p>
   </Seccion>
 
   <Seccion id="empezar" titulo="Cómo empezamos" introduccion="Cuatro pasos, sin complicaciones.">

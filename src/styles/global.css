@@ -4,6 +4,7 @@
 
 /* Paleta y tipografías de docs/MARCA.md */
 @theme {
+  /* Colores corporativos (logo) */
   --color-noche: #0a2e62;
   --color-intenso: #0d2f9b;
   --color-real: #0c4aa5;
@@ -11,8 +12,18 @@
   --color-cielo: #16a4ce;
   --color-turquesa: #2aced7;
   --color-gris: #858585;
-  --color-pizarra: #6b6b6b; /* gris de texto con contraste AA sobre blanco y gris claro */
+  --color-pizarra: #6b6b6b;
   --color-claro: #f2f5f8;
+
+  /* Tema oscuro (prueba): fondos derivados del azul noche, texto claro.
+     Contrastes medidos: texto 17:1, texto suave 9:1, turquesa 10:1 sobre el fondo. */
+  --color-fondo: #050e24;
+  --color-fondo-alt: #081733;
+  --color-superficie: #0c1f44;
+  --color-superficie-2: #12295a;
+  --color-borde: #1d3a6e;
+  --color-texto: #eaf2ff;
+  --color-suave: #a8b8d2;
 
   --font-titulos: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
   --font-texto: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
@@ -21,8 +32,10 @@
 @layer base {
   html {
     font-family: var(--font-texto);
-    color: var(--color-noche);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-titulos);
@@ -37,5 +50,24 @@
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  /* Texto con degradado de la marca (azul cielo → turquesa) para destacar palabras */
+  .texto-degradado {
+    background-image: linear-gradient(90deg, var(--color-cielo), var(--color-turquesa));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Fondo de héroe: resplandores de marca y una cuadrícula muy tenue (líneas de conexión) */
+  .fondo-hero {
+    background-image:
+      radial-gradient(60% 50% at 85% 10%, rgb(42 206 215 / 0.18), transparent 70%),
+      radial-gradient(50% 50% at 5% 90%, rgb(13 47 155 / 0.45), transparent 70%),
+      linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size: auto, auto, 48px 48px, 48px 48px;
   }
 }

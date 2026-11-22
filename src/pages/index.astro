@@ -37,21 +37,21 @@ import { pasosHistoria, preguntasComunes, integraciones, notaIntegraciones } fro
 
   <Seccion fondo="claro" id="que-hace" titulo="Un empleado que nunca cierra" introduccion="El agente es como una persona más de tu equipo, con sus tareas claras.">
     <dl class="grid gap-6 md:grid-cols-2">
-      <div class="rounded-2xl border border-noche/10 bg-white p-6">
+      <div class="rounded-2xl border border-borde bg-superficie p-6">
         <dt class="font-titulos text-lg font-bold">Canales</dt>
-        <dd class="mt-2 text-pizarra">WhatsApp y llamadas.</dd>
+        <dd class="mt-2 text-suave">WhatsApp y llamadas.</dd>
       </div>
-      <div class="rounded-2xl border border-noche/10 bg-white p-6">
+      <div class="rounded-2xl border border-borde bg-superficie p-6">
         <dt class="font-titulos text-lg font-bold">Horario</dt>
-        <dd class="mt-2 text-pizarra">Las 24 horas, todos los días.</dd>
+        <dd class="mt-2 text-suave">Las 24 horas, todos los días.</dd>
       </div>
-      <div class="rounded-2xl border border-noche/10 bg-white p-6">
+      <div class="rounded-2xl border border-borde bg-superficie p-6">
         <dt class="font-titulos text-lg font-bold">Qué hace</dt>
-        <dd class="mt-2 text-pizarra">Responde dudas, presupuesta según tus tarifas, agenda citas, envía recordatorios y avisa a tu equipo.</dd>
+        <dd class="mt-2 text-suave">Responde dudas, presupuesta según tus tarifas, agenda citas, envía recordatorios y avisa a tu equipo.</dd>
       </div>
-      <div class="rounded-2xl border border-noche/10 bg-white p-6">
+      <div class="rounded-2xl border border-borde bg-superficie p-6">
         <dt class="font-titulos text-lg font-bold">Cuando no sabe</dt>
-        <dd class="mt-2 text-pizarra">Pasa el caso a una persona. Y siempre dice que es una IA.</dd>
+        <dd class="mt-2 text-suave">Pasa el caso a una persona. Y siempre dice que es una IA.</dd>
       </div>
     </dl>
   </Seccion>
@@ -60,7 +60,7 @@ import { pasosHistoria, preguntasComunes, integraciones, notaIntegraciones } fro
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       {integraciones.map((i) => <Tarjeta titulo={i.titulo}>{i.texto}</Tarjeta>)}
     </div>
-    <p class="mt-8 text-pizarra">{notaIntegraciones}</p>
+    <p class="mt-8 text-suave">{notaIntegraciones}</p>
   </Seccion>
 
   <Seccion fondo="claro" id="mas-servicios" titulo="Y si necesitas algo más" introduccion="Además del agente, creamos soluciones a medida para el resto de tu negocio.">

@@ -11,8 +11,8 @@ const mensajes = [
 const pasos = ['Consulta entendida', 'Presupuesto', 'Cita agendada'];
 ---
 <figure class="mx-auto w-full max-w-md" aria-labelledby="chat-leyenda">
-  <div class="overflow-hidden rounded-2xl border border-noche/10 bg-white shadow-lg">
-    <div class="flex items-center gap-3 bg-noche px-4 py-3 text-white">
+  <div class="overflow-hidden rounded-2xl border border-borde bg-superficie shadow-2xl shadow-black/40">
+    <div class="flex items-center gap-3 bg-superficie-2 px-4 py-3 text-white">
       <span class="flex h-9 w-9 items-center justify-center rounded-full bg-turquesa font-titulos text-sm font-bold text-noche" aria-hidden="true">PE</span>
       <div>
         <p class="font-titulos text-sm font-semibold">Peluquería Ejemplo</p>
@@ -20,7 +20,7 @@ const pasos = ['Consulta entendida', 'Presupuesto', 'Cita agendada'];
       </div>
     </div>
 
-    <ol class="chat space-y-3 bg-claro p-4" aria-label="Conversación de ejemplo">
+    <ol class="chat space-y-3 bg-fondo p-4" aria-label="Conversación de ejemplo">
       {mensajes.map((m, i) => (
         <li
           class:list={['chat-msg flex', m.de === 'cliente' ? 'justify-start' : 'justify-end']}
@@ -29,7 +29,7 @@ const pasos = ['Consulta entendida', 'Presupuesto', 'Cita agendada'];
           <p
             class:list={[
               'max-w-[85%] rounded-2xl px-4 py-2 text-sm',
-              m.de === 'cliente' ? 'rounded-bl-sm bg-white text-noche shadow-sm' : 'rounded-br-sm bg-medio text-white',
+              m.de === 'cliente' ? 'rounded-bl-sm bg-superficie-2 text-texto' : 'rounded-br-sm bg-medio text-white',
             ]}
           >
             <span class="sr-only">{m.de === 'cliente' ? 'Cliente: ' : 'Agente: '}</span>{m.texto}
@@ -38,16 +38,16 @@ const pasos = ['Consulta entendida', 'Presupuesto', 'Cita agendada'];
       ))}
     </ol>
 
-    <ul class="flex flex-wrap gap-2 border-t border-noche/10 bg-white px-4 py-3">
+    <ul class="flex flex-wrap gap-2 border-t border-borde bg-superficie px-4 py-3">
       {pasos.map((p) => (
-        <li class="inline-flex items-center gap-1.5 rounded-full bg-claro px-3 py-1 text-xs font-medium text-noche">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-medio" aria-hidden="true"><path d="M5 12l5 5 9-10" /></svg>
+        <li class="inline-flex items-center gap-1.5 rounded-full bg-fondo px-3 py-1 text-xs font-medium text-texto">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-turquesa" aria-hidden="true"><path d="M5 12l5 5 9-10" /></svg>
           {p}
         </li>
       ))}
     </ul>
   </div>
-  <figcaption id="chat-leyenda" class="mt-3 text-center text-sm text-pizarra">
+  <figcaption id="chat-leyenda" class="mt-3 text-center text-sm text-suave">
     Ejemplo ilustrativo con un negocio ficticio. No es un caso real.
   </figcaption>
 </figure>

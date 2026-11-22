@@ -8,20 +8,22 @@ interface Props {
   class?: string;
 }
 const { fondo = 'blanco', id, titulo, introduccion, class: clase = '' } = Astro.props;
+// Tema oscuro: 'blanco' = fondo base, 'claro' = banda alternada, 'noche' = banda de cierre con degradado
+// azul (texto blanco con buen contraste), 'degradado' = degradado completo (cuidado con el turquesa).
 const fondos = {
-  blanco: 'bg-white text-noche',
-  claro: 'bg-claro text-noche',
-  noche: 'bg-noche text-white',
+  blanco: 'bg-fondo text-texto',
+  claro: 'bg-fondo-alt text-texto',
+  noche: 'bg-gradient-to-br from-intenso via-real to-medio text-white',
   degradado: 'bg-gradient-to-br from-intenso via-medio to-turquesa text-white',
 };
-const oscuro = fondo === 'noche' || fondo === 'degradado';
+const destacado = fondo === 'noche' || fondo === 'degradado';
 ---
 <section id={id} class:list={['py-16 sm:py-24', fondos[fondo], clase]} aria-labelledby={titulo && id ? `${id}-titulo` : undefined}>
   <Contenedor>
     {(titulo || introduccion) && (
       <header class="mb-10 max-w-3xl sm:mb-14">
         {titulo && <h2 id={id ? `${id}-titulo` : undefined} class="text-3xl sm:text-4xl">{titulo}</h2>}
-        {introduccion && <p class:list={['mt-4 text-lg', oscuro ? 'text-white/90' : 'text-pizarra']}>{introduccion}</p>}
+        {introduccion && <p class:list={['mt-4 text-lg', destacado ? 'text-white/90' : 'text-suave']}>{introduccion}</p>}
       </header>
     )}
     <slot />
