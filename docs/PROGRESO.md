@@ -6,7 +6,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - Web de prueba en Vercel: https://factornex-web.vercel.app (despliegue automático desde `main`; protección de Vercel desactivada en este proyecto, 2026-11-22). Commits nuevos con la identidad `jucarcam63` (correo noreply de GitHub); si no, Vercel Hobby no despliega.
 - Tema oscuro publicado en `main` (2026-11-22). Rama de prueba `prueba-modo-oscuro` ya integrada; se puede borrar.
 - Siguiente paso: Servicios y Sobre nosotros (y Soluciones, que está en el menú). Los enlaces a páginas aún sin crear dan 404.
-- Para que el NIF salga en el aviso legal publicado: añadir en Vercel la variable `NIF_TITULAR` (tipo Secret, todos los entornos) y redeploy. Mientras tanto, la web publicada muestra "[PENDIENTE: NIF]" ahí.
+- NIF publicado solo en el aviso legal (variable `NIF_TITULAR` en Vercel, tipo Secret; verificado el 2026-11-22: formato y letra de control correctos, y no aparece en ninguna otra página).
 - Formulario activo: `RESEND_API_KEY` (secreta) y `CONTACT_TO_EMAIL` están en Vercel. Los correos salen de `onboarding@resend.dev` y pueden caer en Spam al principio. Mejora pendiente: verificar el dominio factornex.es en Resend y definir `CONTACT_FROM_EMAIL` cuando exista el dominio.
 - Pendiente de Contacto: enlace público de Calendly en `RESERVA_URL` (`src/config.ts`).
 - Aviso de seguridad conocido: `npm audit` marca 3 vulnerabilidades altas en `path-to-regexp` (dependencia de compilación de `@astrojs/vercel`, no recibe datos de usuarios). La "corrección" que propone npm instala una versión antigua e incompatible; no aplicar. Revisar al actualizar el adaptador.
