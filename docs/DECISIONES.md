@@ -24,13 +24,17 @@
 | 2026-11-22 | Informe de actividad del agente al cliente: se menciona sin detalle | Aún no se sabe qué datos permite sacar el sistema. Concretar contenido y frecuencia antes de lanzar |
 | 2026-11-22 | "Cómo empezamos" en 4 pasos: llamada de diagnóstico gratuito → configuración con tarifas y horarios → prueba con el cliente → puesta en marcha | Propuesta aprobada por el titular en principio |
 | 2026-11-22 | Tema oscuro para toda la web: fondo en degradado azul noche, bordes de tarjetas con degradado y efectos al pasar el ratón | Más elegante y más propio del sector digital y de la IA, sin perder los colores corporativos. Detalles y contrastes en MARCA.md |
+| 2026-11-22 | Sistema de citas: **Calendly** (enlace normal, sin incrustar) | El titular ya tiene cuenta; el plan gratuito basta para una llamada de diagnóstico; sin incrustar no hace falta consentimiento de cookies. Falta pegar el enlace en `RESERVA_URL` (`src/config.ts`) |
+| 2026-11-22 | Formulario de contacto: endpoint `/api/contacto` (adaptador de Vercel) + Resend; las consultas llegan a `jucarcam63@gmail.com` (variable `CONTACT_TO_EMAIL`, hasta tener contacto@factornex.es) | Los conectores de Claude no sirven para la web publicada; Resend es la decisión ya tomada. Sin dominio verificado, Resend solo envía a la cuenta que lo creó |
+| 2026-11-22 | El correo de contacto no se muestra en el pie ni en el formulario; solo en el aviso legal (obligatorio) | Evitar correo basura. Quien quiera escribir usa el formulario |
+| 2026-11-22 | WhatsApp de contacto: no se publica el móvil personal; la sección queda preparada y oculta hasta tener número de empresa (`WHATSAPP_NUMERO` en `src/config.ts`) | Un número publicado se rastrea y no se puede retirar; el titular comprará uno de empresa |
 | 2026-11-22 | Sin precio publicado en la v1; llamada a la acción: reservar una llamada / diagnóstico gratuito | Precio aún sin definir ni validar con clientes reales. Revisar tras los 3 primeros clientes y publicar "desde X €/mes" si el precio es estable |
 
 ## Pendientes
 1. Datos legales: correo de contacto y alta censal (autónomo). Ya facilitados: domicilio (Avenida de la Constitución 97, 28850 Torrejón de Ardoz, Madrid; se muestra en el pie) y NIF (guardado solo en el `.env` local, que no se sube a GitHub; para publicarlo hay que añadir la variable `NIF_TITULAR` en Vercel → Settings → Environment Variables; **solo se muestra en el aviso legal**, nunca en el pie ni en otras páginas, por decisión del titular).
 2. Compatibilidad con el empleo actual antes de facturar (consultar con asesor).
 3. Comprobar marca/nombre comercial FACTORNEX en OEPM y registrar el dominio.
-4. Elegir sistema de citas definitivo: páginas de reserva de Google Calendar o Cal.com.
+4. Crear el evento "Diagnóstico gratuito" en Calendly y pegar su enlace público en `RESERVA_URL`. Crear la cuenta de Resend y añadir `RESEND_API_KEY`, `CONTACT_TO_EMAIL` y (opcional) `CONTACT_FROM_EMAIL` en Vercel.
 5. Textos del agente (producto estrella), de los servicios complementarios y de los ejemplos de Soluciones.
 6. Voz/personaje propio de Nexo (el nombre ya está decidido) y comprobar que "Nexo" no esté registrado como marca en nuestra clase.
 7. Definir precio y condiciones del agente (para la llamada comercial; publicar más adelante).

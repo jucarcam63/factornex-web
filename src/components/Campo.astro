@@ -1,0 +1,36 @@
+---
+interface Props {
+  id: string;
+  etiqueta: string;
+  tipo?: 'text' | 'email' | 'tel' | 'select' | 'textarea';
+  requerido?: boolean;
+  autocompletar?: string;
+  ayuda?: string;
+  opciones?: readonly { valor: string; texto: string }[];
+  maximo?: number;
+}
+const { id, etiqueta, tipo = 'text', requerido = false, autocompletar, ayuda, opciones = [], maximo } = Astro.props;
+const idError = `error-${id}`;
+const idAyuda = `ayuda-${id}`;
+const describedby = [ayuda ? idAyuda : null, idError].filter(Boolean).join(' ');
+const estilo =
+  'mt-2 block w-full rounded-lg border-2 border-borde bg-fondo px-4 py-3 text-texto placeholder:text-suave/70 transition-colors focus:border-turquesa focus:outline-none focus-visible:ring-2 focus-visible:ring-turquesa/60 aria-[invalid=true]:border-rose-400';
+---
+<div>
+  <label for={id} class="block font-titulos text-sm font-semibold text-texto">
+    {etiqueta}{requerido ? <span class="text-turquesa" aria-hidden="true"> *</span> : <span class="font-normal text-suave"> (opcional)</span>}
+  </label>
+  {ayuda && <p id={idAyuda} class="mt-1 text-sm text-suave">{ayuda}</p>}
+
+  {tipo === 'select' ? (
+    <select id={id} name={id} required={requerido} aria-describedby={describedby} class={estilo}>
+      <option value="">Elige una opción</option>
+      {opciones.map((o) => <option value={o.valor}>{o.texto}</option>)}
+    </select>
+  ) : tipo === 'textarea' ? (
+    <textarea id={id} name={id} rows="5" required={requerido} maxlength={maximo} aria-describedby={describedby} class={estilo}></textarea>
+  ) : (
+    <input id={id} name={id} type={tipo} required={requerido} autocomplete={autocompletar} maxlength={maximo} aria-describedby={describedby} class={estilo} />
+  )}
+  <p id={idError} class="mt-1 text-sm font-medium text-rose-300" hidden></p>
+</div>

@@ -1,0 +1,46 @@
+---
+// Página de Contacto. Textos: docs/CONTENIDOS.md ("Cuéntanos qué necesitas mejorar").
+import Base from '../layouts/Base.astro';
+import Contenedor from '../components/Contenedor.astro';
+import Tarjeta from '../components/Tarjeta.astro';
+import Boton from '../components/Boton.astro';
+import Formulario from '../components/Formulario.astro';
+import { RESERVA_URL, RESERVA_EXTERNA, WHATSAPP_NUMERO } from '../config';
+---
+<Base titulo="Contacto" descripcion="Cuéntanos qué necesitas mejorar en tu negocio o reserva una llamada de diagnóstico gratuito con FACTORNEX.">
+  <section class="fondo-hero py-14 sm:py-20" aria-labelledby="contacto-titulo">
+    <Contenedor class="grid gap-12 lg:grid-cols-5">
+      <div class="lg:col-span-2">
+        <h1 id="contacto-titulo" class="text-4xl sm:text-5xl">Cuéntanos qué necesitas mejorar.</h1>
+        <p class="mt-5 text-lg text-suave">
+          Escríbenos y te respondemos lo antes posible. También puedes reservar una llamada de diagnóstico gratuito para ver cómo atiendes hoy a tus clientes y qué se te escapa.
+        </p>
+
+        <div class="mt-8 space-y-6">
+          {RESERVA_EXTERNA && (
+            <Tarjeta titulo="Reservar una llamada">
+              <p>Elige el día y la hora que mejor te vengan.</p>
+              <div class="mt-4"><Boton href={RESERVA_URL}>Reservar una llamada</Boton></div>
+            </Tarjeta>
+          )}
+          {WHATSAPP_NUMERO && (
+            <Tarjeta titulo="Escríbenos por WhatsApp">
+              <p>Respuesta por mensaje, cuando te venga bien.</p>
+              <div class="mt-4"><Boton href={`https://wa.me/${WHATSAPP_NUMERO}`} variante="secundario">Abrir WhatsApp</Boton></div>
+            </Tarjeta>
+          )}
+        </div>
+      </div>
+
+      <div class="lg:col-span-3">
+        <div id="formulario-tarjeta" class="borde-degradado scroll-mt-28 rounded-2xl p-6 sm:p-8">
+          <h2 class="mb-6 text-2xl">Envíanos tu consulta</h2>
+          <Formulario />
+          <noscript>
+            <p class="mt-4 text-sm text-suave">El formulario funciona sin JavaScript, pero la validación al momento necesita activarlo.</p>
+          </noscript>
+        </div>
+      </div>
+    </Contenedor>
+  </section>
+</Base>

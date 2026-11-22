@@ -8,9 +8,20 @@ export const SITE = {
   idioma: 'es-ES',
 } as const;
 
-/** Destino del botón "Reservar una llamada" (Google Calendar o Cal.com). */
-// [PENDIENTE: URL del sistema de citas — ver DECISIONES.md, pendiente 4]. Mientras tanto, lleva a Contacto.
-export const RESERVA_URL = '/contacto';
+/**
+ * Destino del botón "Reservar una llamada". Sistema elegido: Calendly (enlace normal, sin incrustar,
+ * para no necesitar consentimiento de cookies). [PENDIENTE: pegar aquí el enlace público de Calendly,
+ * p. ej. 'https://calendly.com/tu-usuario/diagnostico']. Mientras tanto lleva al formulario de Contacto.
+ */
+export const RESERVA_URL = '/contacto#formulario';
+/** true cuando RESERVA_URL es un enlace externo (Calendly): entonces la página de Contacto muestra la opción de reservar. */
+export const RESERVA_EXTERNA = RESERVA_URL.startsWith('http');
+
+/**
+ * Número de WhatsApp de contacto en formato internacional sin "+" ni espacios (p. ej. '34600000000').
+ * null = no se muestra. [PENDIENTE: número de empresa; por decisión del titular no se publica el móvil personal.]
+ */
+export const WHATSAPP_NUMERO: string | null = null;
 
 export const MENU = [
   { texto: 'Inicio', href: '/' },
@@ -36,7 +47,9 @@ export const EMPRESA = {
   // No se guarda en el código: se lee de la variable de entorno NIF_TITULAR (.env local y Vercel).
   nif: import.meta.env.NIF_TITULAR ?? '[PENDIENTE: NIF]',
   domicilio: 'Avenida de la Constitución 97, 28850 Torrejón de Ardoz, Madrid',
-  correo: '[PENDIENTE: correo de contacto]',
+  // Correo de contacto: NO se muestra en el pie (evita correo basura). Se mostrará solo en el aviso legal, donde es obligatorio.
+  // Los formularios llegan a CONTACT_TO_EMAIL (variable de entorno, no en el código).
+  correo: '[PENDIENTE: correo para el aviso legal]',
 } as const;
 
 /** Logo. Provisional hasta tener los SVG definitivos (ver docs/MARCA.md). */

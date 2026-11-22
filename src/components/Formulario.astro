@@ -1,0 +1,138 @@
+---
+import Campo from './Campo.astro';
+import { SERVICIOS } from '../lib/validacion';
+---
+<div id="contenedor-formulario">
+  <form id="formulario" method="post" action="/api/contacto" novalidate class="scroll-mt-28 space-y-5">
+    <div id="aviso-error" role="alert" class="rounded-lg border-2 border-rose-400 bg-rose-950/40 p-4 text-rose-200" hidden></div>
+
+    <Campo id="nombre" etiqueta="Nombre" requerido autocompletar="name" maximo={100} />
+    <Campo id="empresa" etiqueta="Empresa o negocio" autocompletar="organization" maximo={120} />
+    <Campo id="correo" etiqueta="Correo electrónico" tipo="email" requerido autocompletar="email" maximo={254} />
+    <Campo id="telefono" etiqueta="Teléfono" tipo="tel" autocompletar="tel" maximo={25} />
+    <Campo id="servicio" etiqueta="Servicio de interés" tipo="select" requerido opciones={SERVICIOS} />
+    <Campo id="mensaje" etiqueta="Cuéntanos qué necesitas" tipo="textarea" requerido maximo={2000} ayuda="Por ejemplo: cómo atiendes hoy a tus clientes y qué te gustaría mejorar." />
+
+    <!-- Campo trampa antispam: invisible para personas; los robots lo rellenan. -->
+    <div class="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
+      <label>No rellenes este campo<input type="text" name="sitio_web" tabindex="-1" autocomplete="off" /></label>
+    </div>
+    <input type="hidden" name="abierto" id="abierto" value="" />
+
+    <div>
+      <div class="flex items-start gap-3">
+        <input id="privacidad" name="privacidad" type="checkbox" required aria-describedby="error-privacidad" class="mt-1 h-5 w-5 shrink-0 cursor-pointer rounded accent-turquesa" />
+        <label for="privacidad" class="text-sm text-texto">
+          He leído y acepto la <a href="/privacidad" class="text-turquesa underline underline-offset-4 hover:text-white">política de privacidad</a>. <span class="text-turquesa" aria-hidden="true">*</span>
+        </label>
+      </div>
+      <p id="error-privacidad" class="mt-1 text-sm font-medium text-rose-300" hidden></p>
+    </div>
+
+    <p class="text-xs text-suave">
+      Responsable: Juan Carlos Camaño Martínez (FACTORNEX). Finalidad: responder a tu consulta. Base legal: tu consentimiento.
+      No cedemos tus datos a terceros salvo proveedores necesarios para el envío del correo. Puedes ejercer tus derechos de acceso,
+      rectificación, supresión y otros según se explica en la política de privacidad.
+    </p>
+
+    <button
+      id="enviar"
+      type="submit"
+      class="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-real to-medio px-6 py-3 font-titulos font-semibold text-white shadow-lg shadow-medio/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-none hover:bg-turquesa hover:text-noche hover:shadow-[0_10px_28px_-6px_rgba(42,206,215,0.6)] disabled:cursor-wait disabled:opacity-70 motion-reduce:transition-none motion-reduce:hover:transform-none sm:w-auto"
+    >
+      Enviar consulta
+    </button>
+  </form>
+
+  <div id="exito" role="status" tabindex="-1" class="rounded-2xl bg-white/5 p-8 text-center" hidden>
+    <h3 class="text-2xl">¡Gracias! Hemos recibido tu consulta.</h3>
+    <p class="mt-3 text-suave">Te responderemos lo antes posible al correo que nos has indicado.</p>
+  </div>
+</div>
+
+<script>
+  import { validar, type Campo } from '../lib/validacion';
+
+  const form = document.getElementById('formulario') as HTMLFormElement;
+  const avisoError = document.getElementById('aviso-error') as HTMLElement;
+  const exito = document.getElementById('exito') as HTMLElement;
+  const boton = document.getElementById('enviar') as HTMLButtonElement;
+  const campos: Campo[] = ['nombre', 'empresa', 'correo', 'telefono', 'servicio', 'mensaje', 'privacidad'];
+
+  (document.getElementById('abierto') as HTMLInputElement).value = String(Date.now());
+
+  const leer = () => {
+    const f = new FormData(form);
+    return Object.fromEntries(f.entries());
+  };
+
+  function mostrarError(campo: Campo, mensaje?: string) {
+    const aviso = document.getElementById(`error-${campo}`);
+    const control = document.getElementById(campo);
+    if (!aviso || !control) return;
+    aviso.textContent = mensaje ?? '';
+    aviso.hidden = !mensaje;
+    if (mensaje) control.setAttribute('aria-invalid', 'true');
+    else control.removeAttribute('aria-invalid');
+  }
+
+  function mostrarErrores(errores: Partial<Record<Campo, string>>, enfocar = false) {
+    let primero: Campo | null = null;
+    for (const c of campos) {
+      mostrarError(c, errores[c]);
+      if (errores[c] && !primero) primero = c;
+    }
+    if (enfocar && primero) document.getElementById(primero)?.focus();
+  }
+
+  function mostrarAviso(mensaje: string) {
+    avisoError.textContent = mensaje;
+    avisoError.hidden = false;
+  }
+
+  function mostrarExito() {
+    form.hidden = true;
+    exito.hidden = false;
+    exito.focus();
+  }
+
+  // Validación al salir de cada campo (solo el campo que se acaba de tocar).
+  for (const c of campos) {
+    document.getElementById(c)?.addEventListener('blur', () => {
+      const { errores } = validar(leer());
+      mostrarError(c, errores[c]);
+    });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    avisoError.hidden = true;
+    const { ok, errores } = validar(leer());
+    mostrarErrores(errores, true);
+    if (!ok) return;
+
+    boton.disabled = true;
+    boton.textContent = 'Enviando…';
+    try {
+      const r = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      const datos = await r.json().catch(() => ({}));
+      if (r.ok && datos.ok) {
+        mostrarExito();
+        return;
+      }
+      if (datos.errores) mostrarErrores(datos.errores, true);
+      else mostrarAviso(datos.mensaje ?? 'No hemos podido enviar tu consulta. Inténtalo de nuevo en unos minutos.');
+    } catch {
+      mostrarAviso('No hemos podido conectar. Comprueba tu conexión e inténtalo de nuevo.');
+    } finally {
+      boton.disabled = false;
+      boton.textContent = 'Enviar consulta';
+    }
+  });
+
+  // Sin JavaScript, el servidor redirige a /contacto?estado=...: se muestra el resultado.
+  const estado = new URLSearchParams(location.search).get('estado');
+  if (estado === 'ok') mostrarExito();
+  else if (estado === 'invalido') mostrarAviso('Revisa los datos del formulario e inténtalo de nuevo.');
+  else if (estado === 'error') mostrarAviso('No hemos podido enviar tu consulta. Inténtalo de nuevo en unos minutos.');
+</script>

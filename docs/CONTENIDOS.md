@@ -82,6 +82,13 @@ Estructura de cada página: qué es · problemas que resuelve · ejemplos de apl
 - Título: La tecnología tiene sentido cuando mejora las cosas.
 - Texto base del documento inicial. ⏳ Añadir datos reales del fundador (solo verificables).
 
+### Estado de la página de Contacto (2026-11-22) — implementada en `src/pages/contacto.astro`
+Formulario con validación en navegador y servidor, antispam (campo trampa + tiempo mínimo + comprobación de origen) y envío por Resend a `CONTACT_TO_EMAIL`. Campos: nombre, empresa (opcional), correo, teléfono (opcional), servicio de interés, mensaje, casilla de privacidad. Sin respuesta automática al cliente en la v1.
+- Texto de primera capa de privacidad junto al botón: borrador; revisar con la política de privacidad completa. [PENDIENTE: plazo de conservación de los datos y proveedores (Resend, Vercel) en la política.]
+- La casilla enlaza con `/privacidad`, que aún no existe (404).
+- Reservar una llamada: visible en Contacto solo cuando `RESERVA_URL` sea un enlace externo (Calendly). WhatsApp: oculto hasta tener número de empresa.
+- Sin probar el envío real hasta que existan las claves de Resend en Vercel.
+
 ## Contacto ✏️
 - Título: Cuéntanos qué necesitas mejorar.
 - Campos: Nombre · Empresa · Correo · Teléfono (opcional) · Servicio de interés · Descripción · Acepto la política de privacidad.
