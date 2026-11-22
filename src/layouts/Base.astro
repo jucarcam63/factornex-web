@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Cabecera from '../components/Cabecera.astro';
 import Pie from '../components/Pie.astro';
+import BotonWhatsApp from '../components/BotonWhatsApp.astro';
 import { SITE } from '../config';
 import { indexable } from '../lib/indexable';
 // Se precargan solo las tipografías del alfabeto latino que se usan al pintar la portada.
@@ -81,5 +82,6 @@ const faq = preguntas?.length
       <slot />
     </main>
     <Pie />
+    <BotonWhatsApp />
   </body>
 </html>

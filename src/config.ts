@@ -23,6 +23,12 @@ export const RESERVA_EXTERNA = RESERVA_URL.startsWith('http');
  * null = no se muestra. [PENDIENTE: número de empresa; por decisión del titular no se publica el móvil personal.]
  */
 export const WHATSAPP_NUMERO: string | null = null;
+/** Mensaje que aparece escrito al abrir WhatsApp desde la web (el usuario puede cambiarlo antes de enviar). */
+export const WHATSAPP_MENSAJE = 'Hola, quiero información sobre el agente de IA para mi negocio.';
+/** Enlace de WhatsApp listo para usar, o null mientras no haya número (entonces no se muestra ningún botón). */
+export const WHATSAPP_URL: string | null = WHATSAPP_NUMERO
+  ? `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(WHATSAPP_MENSAJE)}`
+  : null;
 
 export const MENU = [
   { texto: 'Inicio', href: '/' },

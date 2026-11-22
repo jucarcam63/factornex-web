@@ -26,6 +26,12 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
   9. Probar una reserva de punta a punta con un correo de prueba y anular la cita de prueba.
   10. Después, retirar la página de reservas de Google Calendar o dejarla desactivada.
 
+- **Después del lanzamiento inmediato (petición del titular, 2026-11-22): respondedor de WhatsApp en la web.** Cuando termine lo que está en marcha (dominio, correo, lanzamiento), montarlo en el momento que se considere adecuado. Opciones a valorar entonces (decidir con el titular):
+  1. Botón flotante "Escríbenos por WhatsApp" que abre `wa.me` con un mensaje inicial (simple, sin cookies, sin coste). Requiere un número de empresa (`WHATSAPP_NUMERO` en `src/config.ts`, hoy `null`).
+  2. Chat incrustado en la web conectado al agente (Nexo) con respuesta automática y paso a WhatsApp. Requiere proveedor del agente, número de WhatsApp Business (API de Meta), y actualizar privacidad y cookies (nuevo encargado, tratamiento de las conversaciones).
+  **Hecho (2026-11-22):** la opción 1 está montada pero inactiva (`src/components/BotonWhatsApp.astro`, cargado desde `Base.astro`). Para activarla basta poner el número en `WHATSAPP_NUMERO` de `src/config.ts` (formato `34600000000`); también activa la tarjeta de WhatsApp en Contacto. Mensaje inicial en `WHATSAPP_MENSAJE`. Probado con un número falso (enlace correcto) y sin número (no pinta nada). Al activarla: añadir en privacidad que el contacto por WhatsApp lo trata Meta, y probarlo en móvil.
+  Requisitos previos: número de empresa de WhatsApp Business y decidir el proveedor del agente. No publicar el móvil personal.
+
 ## Fase 0 — Preparación
 - [x] Confirmar nombre definitivo: FACTORNEX
 - [ ] Buscar marca en OEPM/EUIPO (que no esté registrada por otro en nuestra clase)
