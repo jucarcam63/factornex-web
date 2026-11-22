@@ -9,12 +9,13 @@ export const SITE = {
 } as const;
 
 /**
- * Destino del botón "Reservar una llamada". Sistema elegido: Calendly (enlace normal, sin incrustar,
- * para no necesitar consentimiento de cookies). [PENDIENTE: pegar aquí el enlace público de Calendly,
- * p. ej. 'https://calendly.com/tu-usuario/diagnostico']. Mientras tanto lleva al formulario de Contacto.
+ * Destino del botón "Reservar una llamada": página de reservas de Google Calendar (cuenta jucarcam63), evento
+ * "Diagnóstico gratuito FACTORNEX" de 30 min con Google Meet. Enlace normal, sin incrustar, para no necesitar
+ * consentimiento de cookies. Si se quiere volver al formulario: '/contacto#formulario'.
  */
-export const RESERVA_URL = '/contacto#formulario';
-/** true cuando RESERVA_URL es un enlace externo (Calendly): entonces la página de Contacto muestra la opción de reservar. */
+export const RESERVA_URL =
+  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2We1FmPWIb-3VDJxlnSNj1f03bAp6vv0LNE57hGfFGoTHNMGTyL8LYSD3zy0--DBqlGsqRu8Rk';
+/** true cuando RESERVA_URL es un enlace externo: entonces la página de Contacto muestra la opción de reservar. */
 export const RESERVA_EXTERNA = RESERVA_URL.startsWith('http');
 
 /**

@@ -86,7 +86,7 @@ Estructura de cada página: qué es · problemas que resuelve · ejemplos de apl
 Formulario con validación en navegador y servidor, antispam (campo trampa + tiempo mínimo + comprobación de origen) y envío por Resend a `CONTACT_TO_EMAIL`. Campos: nombre, empresa (opcional), correo, teléfono (opcional), servicio de interés, mensaje, casilla de privacidad. Sin respuesta automática al cliente en la v1.
 - Texto de primera capa de privacidad junto al botón: borrador; revisar con la política de privacidad completa. [PENDIENTE: plazo de conservación de los datos y proveedores (Resend, Vercel) en la política.]
 - La casilla enlaza con `/privacidad`, que aún no existe (404).
-- Reservar una llamada: visible en Contacto solo cuando `RESERVA_URL` sea un enlace externo (Calendly). WhatsApp: oculto hasta tener número de empresa.
+- Reservar una llamada: activa desde el 2026-11-22 con la página de reservas de Google Calendar (`RESERVA_URL`); visible en Contacto y en todos los botones "Reservar una llamada". WhatsApp: oculto hasta tener número de empresa.
 - Sin probar el envío real hasta que existan las claves de Resend en Vercel.
 
 ## Contacto ✏️
@@ -104,5 +104,5 @@ Aviso legal · Política de privacidad · Política de cookies.
 ### Estado de las páginas legales (2026-11-22) — BORRADORES, revisar con el asesor antes del lanzamiento
 Implementadas en `src/pages/aviso-legal.astro`, `privacidad.astro` y `cookies.astro` (plantilla `src/layouts/Legal.astro`; fecha en `LEGAL_ACTUALIZADO` de `src/config.ts`: actualizarla al cambiar los textos).
 - **Aviso legal:** datos del titular (el NIF solo sale aquí), objeto, condiciones de uso, propiedad intelectual, responsabilidad, nota sobre agentes de IA y ejemplos ficticios, ley aplicable. [PENDIENTE: situación de la marca FACTORNEX en la OEPM.]
-- **Privacidad:** responsable, finalidad y base legal del formulario (consentimiento), encargados (Vercel, Resend, Google/Gmail), derechos y reclamación ante la AEPD, seguridad. [PENDIENTE: plazo concreto de conservación; garantías de transferencias internacionales de cada proveedor; nombrar Calendly cuando esté activo.]
+- **Privacidad:** responsable, finalidad y base legal del formulario (consentimiento), encargados (Vercel, Resend, Google/Gmail), derechos y reclamación ante la AEPD, seguridad. [PENDIENTE: plazo concreto de conservación; garantías de transferencias internacionales de cada proveedor.] Ya incluye la reserva por Google Calendar (base legal: medidas precontractuales, art. 6.1.b).
 - **Cookies:** la web **no instala cookies, no usa almacenamiento local y no carga recursos de terceros** (comprobado el 2026-11-22 en la web publicada). Por eso no hay banner. Si se añade analítica o cualquier servicio externo, hay que actualizar esta página y valorar el consentimiento.
