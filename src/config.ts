@@ -38,8 +38,8 @@ export const EMPRESA = {
 
 /** Logo. Provisional hasta tener los SVG definitivos (ver docs/MARCA.md). */
 export const LOGO = {
-  src: '/logo/logo-factornex-provisional.webp',
-  ancho: 1024,
-  alto: 572,
+  src: '/logo/factornex-principal-provisional.png',
+  ancho: 1159,
+  alto: 435,
   alt: 'FACTORNEX',
 } as const;

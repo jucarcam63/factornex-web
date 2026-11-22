@@ -31,7 +31,12 @@ Basado en el logo original (símbolo de Factor IA) con el texto cambiado a FACTO
 - [PENDIENTE] `factornex-simbolo.svg` → archivo maestro del símbolo (vector).
 - [PENDIENTE] `factornex-principal.svg`, `factornex-completo.svg`, `factornex-negativo.svg`
 - [PENDIENTE] PNG transparentes de 2048 px de ancho de cada versión.
-- Provisional: `logo-factornex-provisional.webp` (1024 × 572, raster generado con IA; no usar como definitivo).
+- Provisional (2026-11-22, aportados por el titular; rasters JPG con fondo blanco, no usar como definitivos):
+  - Originales sin tocar en `public/logo/provisional/` (`simbolo-original.jpg`, `principal-original.jpg`, `completo-original.jpg`).
+  - Versiones con márgenes recortados: `factornex-simbolo-provisional.png`, `factornex-principal-provisional.png` (la que usa la web), `factornex-completo-provisional.png`.
+  - `public/favicon.png`: símbolo centrado en 256 × 256, provisional.
+  - Diferencias con esta guía: la "X" final lleva degradado (aquí se pide texto azul noche plano) y la versión completa dice "para empresas" (el descriptor aprobado es "para negocios"). [PENDIENTE: decidir si se acepta la "X" con degradado y corregir el descriptor en la versión definitiva.]
+- Antiguo: `logo-factornex-provisional.webp` (1024 × 572, ya no se usa).
 
 ### Reglas de uso
 - No deformar, girar, cambiar colores del símbolo ni añadir efectos (sombras, brillos).

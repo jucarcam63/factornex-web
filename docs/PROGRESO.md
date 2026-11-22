@@ -45,7 +45,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - 2026-11-22: creada la estructura de documentación del proyecto.
 - 2026-11-22 (sesión 2): Fase 1 técnica hecha, salvo GitHub/Vercel.
   - Configuración del sitio en `src/config.ts` (menú, legales, datos de empresa, logo, `RESERVA_URL`).
-  - Logo provisional recortado solo por CSS en `Logo.astro` (lleva el descriptor antiguo "y Empresas"; sustituir por los SVG definitivos).
+  - Logo: la web usa el logo principal provisional aportado por el titular (PNG recortado, ver MARCA.md). Sustituir por los SVG definitivos cambiando `LOGO` en `src/config.ts`. Favicon provisional `public/favicon.png`.
   - Pie con el nombre como texto (no existe logo negativo todavía).
   - `/guia-estilo` es una página TEMPORAL (noindex) para revisar componentes: **retirar antes de publicar**.
   - Los enlaces del menú y de legales apuntan a páginas que aún no existen (se crean en Fase 2); `RESERVA_URL` apunta provisionalmente a `/contacto`.
