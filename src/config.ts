@@ -32,6 +32,9 @@ export const MENU = [
   { texto: 'Contacto', href: '/contacto' },
 ] as const;
 
+/** Páginas que van al sitemap.xml (no incluir páginas internas ni /api). */
+export const PAGINAS_SITEMAP = ['/', '/agente-ia', '/servicios', '/sobre-nosotros', '/contacto', '/aviso-legal', '/privacidad', '/cookies'] as const;
+
 export const LEGALES = [
   { texto: 'Aviso legal', href: '/aviso-legal' },
   { texto: 'Política de privacidad', href: '/privacidad' },

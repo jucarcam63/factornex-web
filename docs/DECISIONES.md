@@ -31,6 +31,9 @@
 | 2026-11-22 | El correo de contacto no se muestra en el pie ni en el formulario; solo en el aviso legal (obligatorio) | Evitar correo basura. Quien quiera escribir usa el formulario |
 | 2026-11-22 | WhatsApp de contacto: no se publica el móvil personal; la sección queda preparada y oculta hasta tener número de empresa (`WHATSAPP_NUMERO` en `src/config.ts`) | Un número publicado se rastrea y no se puede retirar; el titular comprará uno de empresa |
 | 2026-11-22 | "Soluciones" se quita del menú y del pie en la v1 (no se crea la página) | Repetiría los ejemplos de Agente IA y Servicios, y la regla es no mostrar casos de clientes que no existen. Se retoma cuando haya casos reales o demostraciones propias; los textos de apoyo siguen en CONTENIDOS.md. Para reactivarla: añadir `{ texto: 'Soluciones', href: '/soluciones' }` a `MENU` en `src/config.ts` y crear la página |
+| 2026-11-22 | La web se publica con **noindex y robots.txt cerrado hasta el lanzamiento**; el interruptor es la variable `INDEXABLE=true` en Vercel (más redeploy) | Evitar que Google indexe contenido provisional en `factornex-web.vercel.app` antes de tener dominio y textos revisados |
+| 2026-11-22 | Dominio: `factornex.es` (con una sola "t"; `factornext.es` es un error) | Está libre a 2026-11-22 (consulta al registro, solo lectura); `factornex.com` también estaba libre. Registro a cargo del titular, en un registrador español recomendado |
+| 2026-11-22 | Analítica de visitas: se decide el día del lanzamiento. Propuesta: Vercel Web Analytics (sin cookies, sin banner) y actualizar la política de privacidad y de cookies | Medir las reservas y consultas sin necesitar consentimiento |
 | 2026-11-22 | Sin precio publicado en la v1; llamada a la acción: reservar una llamada / diagnóstico gratuito | Precio aún sin definir ni validar con clientes reales. Revisar tras los 3 primeros clientes y publicar "desde X €/mes" si el precio es estable |
 
 ## Pendientes

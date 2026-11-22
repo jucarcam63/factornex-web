@@ -3,15 +3,42 @@ import '../styles/global.css';
 import Cabecera from '../components/Cabecera.astro';
 import Pie from '../components/Pie.astro';
 import { SITE } from '../config';
+import { indexable } from '../lib/indexable';
 
 interface Props {
   titulo: string;
   descripcion: string;
   noindex?: boolean;
+  /** Preguntas frecuentes de la página: se publican también como datos estructurados (FAQPage). */
+  preguntas?: { pregunta: string; respuesta: string }[];
 }
-const { titulo, descripcion, noindex = false } = Astro.props;
+const { titulo, descripcion, noindex = false, preguntas } = Astro.props;
 const urlCanonica = new URL(Astro.url.pathname, SITE.url).href;
 const tituloCompleto = titulo.includes(SITE.nombre) ? titulo : `${titulo} | ${SITE.nombre}`;
+const imagen = new URL('/og-image.png', SITE.url).href;
+// Hasta el lanzamiento (INDEXABLE=true) todo va con noindex, también las páginas que no lo pidan.
+const robots = indexable && !noindex ? 'index, follow, max-image-preview:large' : 'noindex, nofollow';
+
+const organizacion = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE.nombre,
+  url: SITE.url,
+  logo: new URL('/logo/factornex-principal.webp', SITE.url).href,
+  description: `${SITE.descriptor}. Agente de IA para WhatsApp y llamadas, automatización de procesos y desarrollo a medida.`,
+  slogan: SITE.eslogan,
+};
+const faq = preguntas?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: preguntas.map((p) => ({
+        '@type': 'Question',
+        name: p.pregunta,
+        acceptedAnswer: { '@type': 'Answer', text: p.respuesta },
+      })),
+    }
+  : null;
 ---
 <!doctype html>
 <html lang="es">
@@ -20,18 +47,28 @@ const tituloCompleto = titulo.includes(SITE.nombre) ? titulo : `${titulo} | ${SI
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{tituloCompleto}</title>
     <meta name="description" content={descripcion} />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={urlCanonica} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content={SITE.nombre} />
     <meta property="og:title" content={tituloCompleto} />
     <meta property="og:description" content={descripcion} />
     <meta property="og:url" content={urlCanonica} />
+    <meta property="og:image" content={imagen} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="FACTORNEX: soluciones inteligentes para negocios" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={tituloCompleto} />
+    <meta name="twitter:description" content={descripcion} />
+    <meta name="twitter:image" content={imagen} />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="256x256" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#050E24" />
+    <script type="application/ld+json" set:html={JSON.stringify(organizacion)} />
+    {faq && <script type="application/ld+json" set:html={JSON.stringify(faq)} />}
   </head>
   <body class="fondo-pagina min-h-screen text-texto antialiased">
     <Cabecera />

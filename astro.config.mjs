@@ -16,6 +16,8 @@ export default defineConfig({
       CONTACT_FROM_EMAIL: envField.string({ context: 'server', access: 'secret', optional: true }),
       // Solo se muestra en el aviso legal (decisión del titular).
       NIF_TITULAR: envField.string({ context: 'server', access: 'secret', optional: true }),
+      // Interruptor de lanzamiento: solo con INDEXABLE=true los buscadores pueden indexar la web (robots, sitemap y meta robots).
+      INDEXABLE: envField.string({ context: 'server', access: 'public', optional: true }),
     },
   },
   vite: {

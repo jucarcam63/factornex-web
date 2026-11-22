@@ -49,11 +49,12 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - [x] Legales: aviso legal, privacidad, cookies (borradores completos; ver CONTENIDOS.md; faltan 4 [PENDIENTE] y revisión del asesor)
 
 ## Fase 3 — Técnico y lanzamiento
-- [ ] SEO: títulos, descripciones, sitemap, robots.txt, Open Graph, datos estructurados
+- [x] SEO (2026-11-22): títulos y descripciones únicos y de longitud adecuada, `sitemap.xml`, `robots.txt` (cerrado hasta el lanzamiento), Open Graph y Twitter con imagen provisional (`public/og-image.png`, generador en `docs/og-image.generador.cjs`), datos estructurados de organización y de preguntas frecuentes. **Falta:** abrirlo el día del lanzamiento con `INDEXABLE=true` en Vercel y enviar el sitemap a Google Search Console
 - [ ] Accesibilidad y rendimiento (Lighthouse > 90)
 - [ ] Pasar la reserva de llamadas a Calendly (ver la lista de tareas en "Ahora mismo")
 - [ ] Probar formulario de punta a punta
-- [ ] Retirar la página temporal `/guia-estilo`
+- [x] Retirar la página temporal `/guia-estilo` (hecho)
+- [x] Página 404 propia y cabeceras de seguridad básicas (`vercel.json`)
 - [ ] Revisar en móvil, tablet y ordenador
 - [ ] Conectar dominio factornex.es y correo corporativo
 - [ ] Publicar

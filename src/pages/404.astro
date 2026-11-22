@@ -1,0 +1,20 @@
+---
+// Página de error 404 con la marca. Se sirve para cualquier dirección que no exista.
+import Base from '../layouts/Base.astro';
+import Contenedor from '../components/Contenedor.astro';
+import Boton from '../components/Boton.astro';
+---
+<Base titulo="Página no encontrada" descripcion="La página que buscas no existe o ha cambiado de dirección." noindex>
+  <section class="fondo-hero py-20 sm:py-32" aria-labelledby="titulo-404">
+    <Contenedor class="max-w-3xl text-center">
+      <p class="font-titulos text-6xl font-bold sm:text-8xl"><span class="texto-degradado">404</span></p>
+      <h1 id="titulo-404" class="mt-4 text-3xl sm:text-4xl">No encontramos esta página.</h1>
+      <p class="mt-4 text-lg text-suave">Puede que la dirección esté mal escrita o que la página ya no exista. Estos enlaces te llevan a donde probablemente buscabas.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <Boton href="/">Ir al inicio</Boton>
+        <Boton href="/servicios" variante="secundario">Ver servicios</Boton>
+        <Boton href="/contacto" variante="secundario">Contacto</Boton>
+      </div>
+    </Contenedor>
+  </section>
+</Base>
