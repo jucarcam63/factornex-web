@@ -4,6 +4,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 
 ## Ahora mismo
 - Web de prueba en Vercel: https://factornex-web.vercel.app (despliegue automático desde `main`; protección de Vercel desactivada en este proyecto, 2026-11-22). Commits nuevos con la identidad `jucarcam63` (correo noreply de GitHub); si no, Vercel Hobby no despliega.
+- Tema oscuro publicado en `main` (2026-11-22). Rama de prueba `prueba-modo-oscuro` ya integrada; se puede borrar.
 - Siguiente paso: Fase 2, Contacto con formulario (es donde acaban los botones de reserva), luego Servicios, Sobre nosotros y legales. Los enlaces a páginas aún sin crear dan 404.
 - Repositorio: https://github.com/jucarcam63/factornex-web (rama `main` subida, 2026-11-22).
 - Pendiente de tu parte: logo SVG definitivo (ver MARCA.md), URL del sistema de citas y datos legales (DECISIONES.md).

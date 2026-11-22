@@ -77,7 +77,17 @@ Nota: en el logo provisional de FACTORNEX el texto salió algo más claro (#192D
 | Fondo secundario | Gris claro | #F2F5F8 |
 | Fondo principal | Blanco | #FFFFFF |
 
-- Proporción orientativa: 60 % blanco y claros · 30 % azul noche · 10 % azules y turquesa.
+- Proporción orientativa (versión clara original): 60 % blanco y claros · 30 % azul noche · 10 % azules y turquesa.
+
+### Tema oscuro de la web (decidido 2026-11-22)
+La web usa fondo oscuro, por ser más elegante y más propio del sector digital y de la IA, sin dejar atrás los colores corporativos. Definido en `src/styles/global.css` con colores semánticos (fondo, texto, borde…), de modo que se puede cambiar de tema tocando un solo archivo.
+- **Fondo de página:** degradado continuo `#050E24 → #0A2E62 (azul noche) → #050E24`. Resplandores turquesa y azul intenso y cuadrícula tenue en la cabecera de la página (líneas de conexión).
+- **Texto:** principal `#EAF2FF`, suave `#A8B8D2`. Contrastes sobre el fondo (medidos): 17:1 y 9:1; en el punto más claro del degradado, 11,8:1 y 6,6:1.
+- **Acentos:** turquesa `#2ACED7` para enlaces, menú activo, iconos y brillos (10:1 sobre el fondo). **El azul medio `#0B7BBB` no sirve como color de texto sobre oscuro (4,2:1)**: solo como relleno de botón con texto blanco (4,6:1).
+- **Tarjetas y recuadros:** borde de 2 px con degradado turquesa → azul medio y relleno `#0C1F44`. Al pasar el ratón o enfocar con el teclado: suben 5 px, brillan en turquesa y el degradado se desplaza. El movimiento se desactiva si el usuario tiene activado "reducir movimiento".
+- **Botones:** principal con degradado azul (`#0C4AA5 → #0B7BBB`, texto blanco) que se ilumina en turquesa con texto azul noche; secundario con borde degradado; ambos suben al pasar el ratón.
+- **Logo:** el provisional es un JPG con fondo blanco, así que va en una pastilla blanca en la cabecera. Con el logo negativo en SVG (letras blancas, sin fondo) se quita la pastilla y el pie podrá llevar el logo en lugar del texto.
+- **Bloque final de llamada a la acción:** degradado azul intenso → azul medio con texto blanco (el turquesa no se usa como fondo bajo texto blanco: no contrasta).
 - Contraste comprobado (2026-11-22): blanco sobre #0B7BBB = 4,60:1 (cumple AA, justo). #858585 sobre blanco = 3,69:1 (no cumple) → en la web el gris de texto es **#6B6B6B** (5,33:1 sobre blanco, 4,87:1 sobre #F2F5F8). Azul noche sobre turquesa = 6,90:1.
 - Blanco sobre turquesa (#2ACED7) no cumple: en secciones con degradado, colocar el texto en la zona azul oscura.
 

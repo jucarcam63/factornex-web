@@ -23,6 +23,7 @@
 | 2026-11-22 | Cada cliente elige el nombre de su agente (Lucía, Antonio…); el agente propio de FACTORNEX se llamará **Nexo** | Quien habla con el agente es el cliente del negocio, que lo verá con la marca de ese negocio. Nexo: corto, serio, enlaza con "conexión" |
 | 2026-11-22 | Informe de actividad del agente al cliente: se menciona sin detalle | Aún no se sabe qué datos permite sacar el sistema. Concretar contenido y frecuencia antes de lanzar |
 | 2026-11-22 | "Cómo empezamos" en 4 pasos: llamada de diagnóstico gratuito → configuración con tarifas y horarios → prueba con el cliente → puesta en marcha | Propuesta aprobada por el titular en principio |
+| 2026-11-22 | Tema oscuro para toda la web: fondo en degradado azul noche, bordes de tarjetas con degradado y efectos al pasar el ratón | Más elegante y más propio del sector digital y de la IA, sin perder los colores corporativos. Detalles y contrastes en MARCA.md |
 | 2026-11-22 | Sin precio publicado en la v1; llamada a la acción: reservar una llamada / diagnóstico gratuito | Precio aún sin definir ni validar con clientes reales. Revisar tras los 3 primeros clientes y publicar "desde X €/mes" si el precio es estable |
 
 ## Pendientes
