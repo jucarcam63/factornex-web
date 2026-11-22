@@ -1,0 +1,67 @@
+---
+// Maqueta de conversación de ejemplo (negocio ficticio). No es un caso real ni usa cifras.
+const mensajes = [
+  { de: 'cliente', texto: 'Hola, ¿tenéis hueco esta semana para corte y tinte?' },
+  { de: 'agente', texto: '¡Hola! Soy el asistente virtual de Peluquería Ejemplo (una IA). Sí, te ayudo. ¿Tienes preferencia de día y hora?' },
+  { de: 'cliente', texto: 'El jueves por la tarde.' },
+  { de: 'agente', texto: 'Presupuesto de corte y tinte según las tarifas del negocio. Tengo libre el jueves a las 17:00. ¿Te lo reservo?' },
+  { de: 'cliente', texto: 'Sí, por favor.' },
+  { de: 'agente', texto: 'Hecho: jueves a las 17:00. Te enviaré un recordatorio el día antes.' },
+];
+const pasos = ['Consulta entendida', 'Presupuesto', 'Cita agendada'];
+---
+<figure class="mx-auto w-full max-w-md" aria-labelledby="chat-leyenda">
+  <div class="overflow-hidden rounded-2xl border border-noche/10 bg-white shadow-lg">
+    <div class="flex items-center gap-3 bg-noche px-4 py-3 text-white">
+      <span class="flex h-9 w-9 items-center justify-center rounded-full bg-turquesa font-titulos text-sm font-bold text-noche" aria-hidden="true">PE</span>
+      <div>
+        <p class="font-titulos text-sm font-semibold">Peluquería Ejemplo</p>
+        <p class="text-xs text-white/80">Atendido por un agente de IA</p>
+      </div>
+    </div>
+
+    <ol class="chat space-y-3 bg-claro p-4" aria-label="Conversación de ejemplo">
+      {mensajes.map((m, i) => (
+        <li
+          class:list={['chat-msg flex', m.de === 'cliente' ? 'justify-start' : 'justify-end']}
+          style={`--i:${i}`}
+        >
+          <p
+            class:list={[
+              'max-w-[85%] rounded-2xl px-4 py-2 text-sm',
+              m.de === 'cliente' ? 'rounded-bl-sm bg-white text-noche shadow-sm' : 'rounded-br-sm bg-medio text-white',
+            ]}
+          >
+            <span class="sr-only">{m.de === 'cliente' ? 'Cliente: ' : 'Agente: '}</span>{m.texto}
+          </p>
+        </li>
+      ))}
+    </ol>
+
+    <ul class="flex flex-wrap gap-2 border-t border-noche/10 bg-white px-4 py-3">
+      {pasos.map((p) => (
+        <li class="inline-flex items-center gap-1.5 rounded-full bg-claro px-3 py-1 text-xs font-medium text-noche">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-medio" aria-hidden="true"><path d="M5 12l5 5 9-10" /></svg>
+          {p}
+        </li>
+      ))}
+    </ul>
+  </div>
+  <figcaption id="chat-leyenda" class="mt-3 text-center text-sm text-pizarra">
+    Ejemplo ilustrativo con un negocio ficticio. No es un caso real.
+  </figcaption>
+</figure>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .chat-msg {
+      opacity: 0;
+      transform: translateY(8px);
+      animation: aparece 0.5s ease forwards;
+      animation-delay: calc(var(--i) * 0.7s + 0.3s);
+    }
+  }
+  @keyframes aparece {
+    to { opacity: 1; transform: none; }
+  }
+</style>

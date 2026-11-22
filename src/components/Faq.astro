@@ -1,0 +1,17 @@
+---
+interface Props {
+  preguntas: { pregunta: string; respuesta: string }[];
+}
+const { preguntas } = Astro.props;
+---
+<div class="max-w-3xl divide-y divide-noche/10 rounded-2xl border border-noche/10 bg-white">
+  {preguntas.map((p) => (
+    <details class="group p-5">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-titulos text-lg font-semibold text-noche [&::-webkit-details-marker]:hidden">
+        {p.pregunta}
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-medio transition-transform group-open:rotate-180" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+      </summary>
+      <p class="mt-3 text-pizarra">{p.respuesta}</p>
+    </details>
+  ))}
+</div>
