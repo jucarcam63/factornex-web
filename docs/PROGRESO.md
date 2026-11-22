@@ -3,7 +3,8 @@
 Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 
 ## Ahora mismo
-- Siguiente paso: subir a GitHub y conectar Vercel (necesita las cuentas); después, Fase 2 (páginas), empezando por Inicio.
+- Siguiente paso: conectar el repositorio con Vercel (web de prueba); después, Fase 2 (páginas), empezando por Inicio.
+- Repositorio: https://github.com/jucarcam63/factornex-web (rama `main` subida, 2026-11-22).
 - Pendiente de tu parte: logo SVG definitivo (ver MARCA.md), URL del sistema de citas y datos legales (DECISIONES.md).
 
 ## Fase 0 — Preparación
