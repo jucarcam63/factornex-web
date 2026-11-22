@@ -53,10 +53,18 @@ export const EMPRESA = {
 /** Fecha de la última revisión de los textos legales. Actualizar al cambiarlos. */
 export const LEGAL_ACTUALIZADO = '22 de noviembre de 2026';
 
-/** Logo. Provisional hasta tener los SVG definitivos (ver docs/MARCA.md). */
+/**
+ * Logos (WebP con fondo transparente, aportados por el titular el 2026-11-22). Siguen siendo raster:
+ * sustituir por los SVG definitivos cuando existan (ver docs/MARCA.md).
+ * - negativo: letras blancas, para fondos oscuros (cabecera y pie de la web)
+ * - principal: letras azul noche, para fondos claros (documentos, correos)
+ * - símbolo: solo el símbolo
+ */
 export const LOGO = {
-  src: '/logo/factornex-principal-provisional.png',
-  ancho: 1159,
-  alto: 435,
+  src: '/logo/factornex-negativo.webp',
+  ancho: 720,
+  alto: 230,
   alt: 'FACTORNEX',
 } as const;
+export const LOGO_PRINCIPAL = { src: '/logo/factornex-principal.webp', ancho: 720, alto: 238, alt: 'FACTORNEX' } as const;
+export const LOGO_SIMBOLO = { src: '/logo/factornex-simbolo.webp', ancho: 274, alto: 320, alt: 'FACTORNEX' } as const;

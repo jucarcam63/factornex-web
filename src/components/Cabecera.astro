@@ -11,9 +11,9 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta === href ||
 </a>
 <header class="sticky top-0 z-40 border-b border-borde bg-fondo/85 backdrop-blur">
   <Contenedor class="flex items-center justify-between gap-4 py-3">
-    {/* El logo provisional es un JPG con fondo blanco: va sobre una pastilla blanca. Con el logo negativo (SVG) se quita. */}
-    <a href="/" aria-label={`${SITE.nombre}, ir al inicio`} class="block rounded-xl bg-white px-3 py-1">
-      <Logo class="h-10 sm:h-11" />
+    {/* Logo negativo (letras blancas, fondo transparente) directamente sobre el fondo oscuro. */}
+    <a href="/" aria-label={`${SITE.nombre}, ir al inicio`} class="block">
+      <Logo class="h-11 sm:h-14" />
     </a>
 
     <nav aria-label="Principal" class="hidden items-center gap-1 lg:flex">

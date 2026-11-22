@@ -1,6 +1,6 @@
 ---
-// Logo provisional (PNG recortado de los márgenes; el símbolo no se modifica).
-// Cuando existan los SVG definitivos (docs/MARCA.md), cambiar LOGO en src/config.ts.
+// Logo de la web: versión negativa (letras blancas, fondo transparente) para el fondo oscuro.
+// Raster provisional: cuando existan los SVG definitivos (docs/MARCA.md), cambiar LOGO en src/config.ts.
 import { LOGO } from '../config';
 interface Props { class?: string }
 const { class: clase = '' } = Astro.props;
@@ -10,5 +10,7 @@ const { class: clase = '' } = Astro.props;
   alt={LOGO.alt}
   width={LOGO.ancho}
   height={LOGO.alto}
+  decoding="async"
+  fetchpriority="high"
   class:list={['block w-auto', clase]}
 />

@@ -12,6 +12,7 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - Contacto cerrado: formulario activo y reserva de llamadas con Google Calendar enlazada (2026-11-22). Pendiente solo el WhatsApp de empresa (cuando haya número).
 - Aviso de seguridad conocido: `npm audit` marca 3 vulnerabilidades altas en `path-to-regexp` (dependencia de compilación de `@astrojs/vercel`, no recibe datos de usuarios). La "corrección" que propone npm instala una versión antigua e incompatible; no aplicar. Revisar al actualizar el adaptador.
 - Repositorio: https://github.com/jucarcam63/factornex-web (rama `main` subida, 2026-11-22).
+- Logos con fondo transparente integrados (2026-11-22): cabecera y pie usan la versión negativa; favicon con el símbolo. Siguen siendo raster; pendiente el SVG definitivo.
 - Pendiente de tu parte: logo SVG definitivo (ver MARCA.md) y los datos legales que faltan (DECISIONES.md).
 - **ANTES DE CERRAR / LANZAR: pasar la reserva de llamadas a Calendly** (decisión del titular, 2026-11-22: le parece más profesional; hoy funciona con Google Calendar y se mantiene hasta entonces). Lista de tareas:
   1. Decidir la cuenta de Calendly para FACTORNEX (la actual es jucarcam65; el evento de Nutridit era una prueba y se puede reutilizar la cuenta) y conectarla al **calendario de jucarcam63** (donde llegan las consultas), para que las citas queden en esa agenda y no se solapen.

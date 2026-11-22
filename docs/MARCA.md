@@ -29,15 +29,13 @@ Basado en el logo original (símbolo de Factor IA) con el texto cambiado a FACTO
 | Símbolo | Solo el símbolo | Favicon, avatar de redes, icono de app |
 
 ### Archivos (`public/logo/`)
-- [PENDIENTE] `factornex-simbolo.svg` → archivo maestro del símbolo (vector).
-- [PENDIENTE] `factornex-principal.svg`, `factornex-completo.svg`, `factornex-negativo.svg`
-- [PENDIENTE] PNG transparentes de 2048 px de ancho de cada versión.
-- Provisional (2026-11-22, aportados por el titular; rasters JPG con fondo blanco, no usar como definitivos):
-  - Originales sin tocar en `public/logo/provisional/` (`simbolo-original.jpg`, `principal-original.jpg`, `completo-original.jpg`).
-  - Versiones con márgenes recortados: `factornex-simbolo-provisional.png`, `factornex-principal-provisional.png` (la que usa la web), `factornex-completo-provisional.png`.
-  - `public/favicon.png`: símbolo centrado en 256 × 256, provisional.
-  - La "X" con degradado de estos logos es correcta (decidido). Diferencia que sigue pendiente: la versión completa dice "para empresas" y el descriptor aprobado es "para negocios". [PENDIENTE: corregir el descriptor en la versión definitiva.]
-- Antiguo: `logo-factornex-provisional.webp` (1024 × 572, ya no se usa).
+- [PENDIENTE] Versiones vectoriales definitivas: `factornex-simbolo.svg`, `factornex-principal.svg`, `factornex-completo.svg` y `factornex-negativo.svg`. Mientras tanto la web usa los WebP con fondo transparente de abajo.
+- **Logos actuales (2026-11-22, aportados por el titular; WebP/PNG con fondo transparente, aún raster):**
+  - Originales sin tocar en `public/logo/originales/` (2000 px): `factornex-principal-original.webp` (letras azul noche, para fondos claros), `factornex-negativo-original.webp` (letras blancas, para fondos oscuros) y `factornex-simbolo-original.png`.
+  - Versiones recortadas y optimizadas para la web: `factornex-negativo.webp` (la que usa la cabecera y el pie, sobre fondo oscuro), `factornex-principal.webp` y `factornex-simbolo.webp` (720 px de ancho las dos primeras). Definidas en `LOGO`, `LOGO_PRINCIPAL` y `LOGO_SIMBOLO` de `src/config.ts`.
+  - Favicons a partir del símbolo: `public/favicon.png` (256), `favicon-32.png` y `apple-touch-icon.png` (180, sobre fondo azul noche).
+  - La "X" con degradado es correcta (decidido). Esta versión ya no lleva descriptor, así que el problema de "para empresas" solo reaparecería en la versión completa (con descriptor): corregirlo a "para negocios" cuando se haga.
+- El logo original de Factor IA (referencia de colores) está en `docs/referencias/logo-original-factor-ia.png`, fuera de la carpeta pública.
 
 ### Reglas de uso
 - No deformar, girar, cambiar colores del símbolo ni añadir efectos (sombras, brillos).
