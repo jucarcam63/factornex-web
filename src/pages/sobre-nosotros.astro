@@ -1,0 +1,60 @@
+---
+// Sobre nosotros. Solo datos verificables (regla 4 de CLAUDE.md): no se inventan años de experiencia, clientes ni cifras.
+// Textos en borrador: docs/CONTENIDOS.md. La trayectoria del titular está pendiente de que la aporte él.
+import Base from '../layouts/Base.astro';
+import Seccion from '../components/Seccion.astro';
+import Hero from '../components/Hero.astro';
+import Tarjeta from '../components/Tarjeta.astro';
+import Boton from '../components/Boton.astro';
+import { EMPRESA, RESERVA_URL } from '../config';
+
+const ideas = [
+  'Tecnología comprensible, sin jerga.',
+  'Soluciones a medida que se integran con lo que ya usas.',
+  'Trato cercano y enfoque práctico.',
+];
+
+const valores = [
+  { titulo: 'Soluciones a medida', texto: 'Cada negocio trabaja a su manera. Partimos de cómo trabajas tú, no de una plantilla.' },
+  { titulo: 'Tecnología comprensible', texto: 'Te explicamos lo que hacemos con palabras claras. Si no lo entiendes, no está bien explicado.' },
+  { titulo: 'Integración con lo que ya usas', texto: 'Siempre que sea posible, conectamos tus herramientas actuales en lugar de pedirte que cambies de todo.' },
+  { titulo: 'Trato cercano', texto: 'Hablas directamente con la persona que hace el trabajo, sin intermediarios.' },
+  { titulo: 'Enfoque práctico', texto: 'Buscamos que la tecnología te quite trabajo y te dé tiempo, no que sea otra cosa más que mantener.' },
+  { titulo: 'Transparencia', texto: 'No prometemos lo que no podemos cumplir. Nuestros agentes de IA se identifican siempre como IA, y los ejemplos de esta web son ilustrativos, no casos de clientes.' },
+];
+---
+<Base titulo="Sobre nosotros" descripcion="Quiénes somos en FACTORNEX: tecnología comprensible, soluciones a medida y trato cercano para negocios, autónomos y pymes.">
+  <Hero
+    etiqueta="Sobre nosotros"
+    titulo="La tecnología tiene sentido cuando mejora las cosas."
+    subtitulo="En FACTORNEX ayudamos a negocios, autónomos y pymes a trabajar mejor con inteligencia artificial, automatización y software a medida."
+    principal={{ texto: 'Reservar una llamada', href: RESERVA_URL }}
+    secundario={{ texto: 'Ver servicios', href: '/servicios' }}
+  >
+    <div class="borde-degradado rounded-2xl p-6">
+      <p class="font-titulos text-lg font-bold">FACTORNEX en tres ideas</p>
+      <ul class="lista-puntos mt-4 text-suave">
+        {ideas.map((i) => <li>{i}</li>)}
+      </ul>
+    </div>
+  </Hero>
+
+  <Seccion fondo="claro" id="como-pensamos" titulo="Cómo pensamos" introduccion="Estas son las ideas con las que trabajamos en cada proyecto.">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {valores.map((v) => <Tarjeta titulo={v.titulo}>{v.texto}</Tarjeta>)}
+    </div>
+  </Seccion>
+
+  <Seccion id="quien" titulo="Quién está detrás">
+    <div class="max-w-3xl space-y-4 text-lg text-suave">
+      <p>
+        {EMPRESA.nombreComercial} es el nombre comercial de <strong class="text-texto">{EMPRESA.titular}</strong>, que atiende personalmente cada proyecto.
+      </p>
+      <p>[PENDIENTE: trayectoria y experiencia verificables del titular: qué ha hecho, en qué sectores y qué le llevó a crear FACTORNEX. No incluir años de experiencia, clientes ni resultados que no se puedan comprobar.]</p>
+    </div>
+  </Seccion>
+
+  <Seccion fondo="noche" id="reserva" titulo="Hablemos de tu negocio" introduccion="Reserva una llamada de diagnóstico gratuito y cuéntanos qué te gustaría mejorar.">
+    <Boton href={RESERVA_URL} variante="negativo">Reservar una llamada</Boton>
+  </Seccion>
+</Base>

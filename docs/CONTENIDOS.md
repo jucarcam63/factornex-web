@@ -81,6 +81,11 @@ Una sola página (v1): hero con índice · Agente IA (resumen y enlace a `/agent
 Estructura de cada página: qué es · problemas que resuelve · ejemplos de aplicación · cómo trabajamos · preguntas frecuentes · llamada a la acción.
 ⏳ Textos de cada servicio.
 
+### Estado de Sobre nosotros (2026-11-22) — implementada en `src/pages/sobre-nosotros.astro`
+Hero ("La tecnología tiene sentido cuando mejora las cosas.", con "FACTORNEX en tres ideas") · "Cómo pensamos" (6 valores: soluciones a medida, tecnología comprensible, integración con lo que ya usas, trato cercano, enfoque práctico y transparencia, tomados de "Por qué FACTORNEX") · "Quién está detrás" (nombre del titular) · llamada final. No contiene datos inventados.
+- [PENDIENTE] Trayectoria y experiencia verificables del titular (qué ha hecho, en qué sectores, qué le llevó a crear FACTORNEX). Sin años de experiencia, clientes ni resultados que no se puedan comprobar. Opcional: foto profesional.
+- No se menciona el empleo actual del titular (pendiente de consultar la compatibilidad con el asesor, ver DECISIONES.md).
+
 ## Sobre nosotros ✏️
 - Título: La tecnología tiene sentido cuando mejora las cosas.
 - Texto base del documento inicial. ⏳ Añadir datos reales del fundador (solo verificables).
