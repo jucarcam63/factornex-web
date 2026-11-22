@@ -28,7 +28,6 @@ export const MENU = [
   { texto: 'Inicio', href: '/' },
   { texto: 'Agente IA', href: '/agente-ia' },
   { texto: 'Servicios', href: '/servicios' },
-  { texto: 'Soluciones', href: '/soluciones' },
   { texto: 'Sobre nosotros', href: '/sobre-nosotros' },
   { texto: 'Contacto', href: '/contacto' },
 ] as const;

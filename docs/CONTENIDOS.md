@@ -37,7 +37,7 @@ Secciones: hero con demo · qué hace (6 tareas) · cómo funciona (historia en 
 - Preguntas frecuentes añadidas, inspiradas en las dudas habituales de webs similares (sin copiar textos): ¿Sustituye a mi equipo?, ¿Cuánto cuesta? (sin precio, se calcula en la llamada), ¿Funciona con el número de WhatsApp que ya uso? Respuesta (dada por el titular): sí; lo recomendable es que esté dado de alta como WhatsApp Business en Meta y, si no lo está, se da de alta como teléfono Business en Meta.
 
 ## Menú
-✅ Inicio · Agente IA · Servicios · Soluciones · Sobre nosotros · Contacto
+✅ Inicio · Agente IA · Servicios · Sobre nosotros · Contacto ("Soluciones" quitada del menú en la v1, ver DECISIONES.md)
 Botón destacado: ✏️ "Reservar una llamada" (abre el sistema de citas). Secundario en páginas: "Solicitar asesoramiento" → Contacto.
 
 ## Servicios de la v1 ✅
@@ -48,7 +48,7 @@ Botón destacado: ✏️ "Reservar una llamada" (abre el sistema de citas). Secu
 3. **Desarrollo a medida** — aplicaciones web, paneles de control, herramientas de gestión, integraciones, con diseño UX/UI incluido.
 La consultoría (diagnóstico de procesos) es el primer paso de cualquier proyecto, no un servicio aparte: se presenta en "Cómo trabajamos".
 
-## Soluciones — "Lo que podemos hacer por tu negocio" ✏️
+## Soluciones — "Lo que podemos hacer por tu negocio" ✏️ (APLAZADA: no está en la v1; textos de apoyo para cuando haya casos reales)
 Objetivo: que el visitante se reconozca en un problema y vea una solución concreta. Son **ejemplos de aplicación**, no casos de clientes: no poner nombres, cifras ni resultados inventados.
 Formato de cada tarjeta: Problema → Qué hacemos → Herramientas habituales → Qué cambia en el día a día.
 1. Llamadas y WhatsApp atendidos a cualquier hora (agente de voz o chat que responde dudas y da citas).
