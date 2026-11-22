@@ -11,8 +11,8 @@ const { fondo = 'blanco', id, titulo, introduccion, class: clase = '' } = Astro.
 // Tema oscuro: 'blanco' = fondo base, 'claro' = banda alternada, 'noche' = banda de cierre con degradado
 // azul (texto blanco con buen contraste), 'degradado' = degradado completo (cuidado con el turquesa).
 const fondos = {
-  blanco: 'bg-fondo text-texto',
-  claro: 'bg-fondo-alt text-texto',
+  blanco: 'text-texto',
+  claro: 'bg-white/[0.04] text-texto',
   noche: 'bg-gradient-to-br from-intenso via-real to-medio text-white',
   degradado: 'bg-gradient-to-br from-intenso via-medio to-turquesa text-white',
 };

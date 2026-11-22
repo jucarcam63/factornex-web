@@ -54,6 +54,13 @@
 }
 
 @layer components {
+  /* Fondo de toda la página: azul casi negro → azul noche corporativo (#0A2E62) hacia la mitad → oscuro.
+     Contraste del texto en el punto más claro: texto 11,8:1, suave 6,6:1, turquesa 6,9:1. */
+  .fondo-pagina {
+    background-color: var(--color-fondo);
+    background-image: linear-gradient(180deg, #050e24 0%, #0a2e62 48%, #050e24 100%);
+  }
+
   /* Texto con degradado de la marca (azul cielo → turquesa) para destacar palabras */
   .texto-degradado {
     background-image: linear-gradient(90deg, var(--color-cielo), var(--color-turquesa));
