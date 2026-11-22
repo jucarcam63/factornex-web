@@ -56,7 +56,8 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - [x] Retirar la página temporal `/guia-estilo` (hecho)
 - [x] Página 404 propia y cabeceras de seguridad básicas (`vercel.json`)
 - [ ] Revisar en móvil, tablet y ordenador
-- [ ] Conectar dominio factornex.es y correo corporativo
+- [ ] Decidir el plan de alojamiento: Vercel Pro (uso comercial) u otro alojamiento (ver DECISIONES.md, pendiente 0)
+- [ ] Conectar dominio factornex.es (dominio comprado por el titular en IONOS) y correo (reenvío gratis `contacto@` → Gmail para empezar)
 - [ ] Publicar
 
 ## Fase 4 — Después del lanzamiento

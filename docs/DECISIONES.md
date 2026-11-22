@@ -37,6 +37,7 @@
 | 2026-11-22 | Sin precio publicado en la v1; llamada a la acción: reservar una llamada / diagnóstico gratuito | Precio aún sin definir ni validar con clientes reales. Revisar tras los 3 primeros clientes y publicar "desde X €/mes" si el precio es estable |
 
 ## Pendientes
+0. **Plan de Vercel antes del lanzamiento (importante):** el plan gratuito Hobby solo permite uso personal o no comercial (Términos de Servicio de Vercel, apartado 4, revisados el 2026-11-22). La web de FACTORNEX es comercial, así que antes de publicar hay que pasar a **Vercel Pro** (de pago, unos 20 USD al mes por usuario según su página de precios; comprobar el precio vigente) o migrar a otro alojamiento cuyas condiciones permitan uso comercial gratuito (p. ej. Cloudflare Pages o Netlify; hay que comprobar sus condiciones y adaptar el proyecto, que usa el adaptador de Vercel para el formulario). Decisión del titular pendiente.
 1. Datos legales: correo de contacto y alta censal (autónomo). Ya facilitados: domicilio (Avenida de la Constitución 97, 28850 Torrejón de Ardoz, Madrid; **solo se muestra en el aviso legal**) y NIF (guardado solo en el `.env` local y en la variable secreta `NIF_TITULAR` de Vercel, nunca en GitHub; **solo se muestra en el aviso legal**, nunca en el pie ni en otras páginas, por decisión del titular). Estado: NIF ya publicado en el aviso legal (2026-11-22).
 2. Compatibilidad con el empleo actual antes de facturar (consultar con asesor).
 3. Comprobar marca/nombre comercial FACTORNEX en OEPM y registrar el dominio.
