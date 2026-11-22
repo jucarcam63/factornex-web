@@ -64,6 +64,13 @@ const experiencia = [
     <div class="mt-10 grid gap-6 md:grid-cols-3">
       {experiencia.map((e) => <Tarjeta titulo={e.titulo}>{e.texto}</Tarjeta>)}
     </div>
+    {/* Formación en IA: se describe como "completada" (graduación el 7-11-2026); el título propio aún no se ha emitido.
+        Cuando llegue (a partir de diciembre), actualizar con el título exacto y la entidad que lo emite. No decir "título oficial". */}
+    <div class="mt-6">
+      <Tarjeta titulo="Formación en inteligencia artificial">
+        En noviembre de 2026 completó el <strong class="text-texto">Programa universitario en Inteligencia Artificial (IA Heroes Pro)</strong> de Learning Heroes Tech School: un programa de 60 ECTS con título propio, de contenido práctico en agentes de IA, automatización y desarrollo de aplicaciones con IA.
+      </Tarjeta>
+    </div>
     <div class="mt-10 max-w-3xl space-y-4 text-lg text-suave">
       <p>
         Además, ha completado formación continua en marketing online, redes sociales, gestión de equipos y control de costes. FACTORNEX nace para ayudar a pymes y autónomos a resolver esos problemas con inteligencia artificial y automatización, hablando su idioma y no el de la tecnología.
