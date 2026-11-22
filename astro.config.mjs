@@ -8,6 +8,8 @@ export default defineConfig({
   site: 'https://factornex.es',
   // Web estática; solo /api/contacto se ejecuta en el servidor (prerender = false).
   adapter: vercel(),
+  // El CSS (≈11 KB) va dentro del HTML: elimina una petición que bloqueaba el pintado.
+  build: { inlineStylesheets: 'always' },
   // Variables privadas: se definen en .env (local) y en Vercel → Settings → Environment Variables.
   env: {
     schema: {

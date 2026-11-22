@@ -1,16 +1,25 @@
 ---
 // Logo de la web: versión negativa (letras blancas, fondo transparente) para el fondo oscuro.
 // Raster provisional: cuando existan los SVG definitivos (docs/MARCA.md), cambiar LOGO en src/config.ts.
+// Se sirven dos tamaños (360 y 720 px) para no descargar de más en pantallas pequeñas.
 import { LOGO } from '../config';
-interface Props { class?: string }
-const { class: clase = '' } = Astro.props;
+interface Props {
+  class?: string;
+  /** true = logo visible al cargar (cabecera); false = se carga más tarde (pie). */
+  prioridad?: boolean;
+}
+const { class: clase = '', prioridad = false } = Astro.props;
+const pequeno = LOGO.src.replace('.webp', '-360.webp');
 ---
 <img
   src={LOGO.src}
+  srcset={`${pequeno} 360w, ${LOGO.src} ${LOGO.ancho}w`}
+  sizes="(min-width: 640px) 176px, 140px"
   alt={LOGO.alt}
   width={LOGO.ancho}
   height={LOGO.alto}
   decoding="async"
-  fetchpriority="high"
+  loading={prioridad ? 'eager' : 'lazy'}
+  fetchpriority={prioridad ? 'high' : 'auto'}
   class:list={['block w-auto', clase]}
 />

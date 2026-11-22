@@ -9,11 +9,11 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta === href ||
 <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-noche focus:px-4 focus:py-2 focus:text-white">
   Saltar al contenido
 </a>
-<header class="sticky top-0 z-40 border-b border-borde bg-fondo/85 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-borde bg-fondo/95">
   <Contenedor class="flex items-center justify-between gap-4 py-3">
     {/* Logo negativo (letras blancas, fondo transparente) directamente sobre el fondo oscuro. */}
     <a href="/" aria-label={`${SITE.nombre}, ir al inicio`} class="block">
-      <Logo class="h-11 sm:h-14" />
+      <Logo class="h-11 sm:h-14" prioridad />
     </a>
 
     <nav aria-label="Principal" class="hidden items-center gap-1 lg:flex">

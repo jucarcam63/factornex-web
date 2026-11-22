@@ -4,6 +4,9 @@ import Cabecera from '../components/Cabecera.astro';
 import Pie from '../components/Pie.astro';
 import { SITE } from '../config';
 import { indexable } from '../lib/indexable';
+// Se precargan solo las tipografías del alfabeto latino que se usan al pintar la portada.
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import manropeLatin from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
 
 interface Props {
   titulo: string;
@@ -66,6 +69,8 @@ const faq = preguntas?.length
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="256x256" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" as="font" type="font/woff2" href={interLatin} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={manropeLatin} crossorigin />
     <meta name="theme-color" content="#050E24" />
     <script type="application/ld+json" set:html={JSON.stringify(organizacion)} />
     {faq && <script type="application/ld+json" set:html={JSON.stringify(faq)} />}

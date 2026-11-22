@@ -18,7 +18,7 @@ const fondos = {
 };
 const destacado = fondo === 'noche' || fondo === 'degradado';
 ---
-<section id={id} class:list={['py-16 sm:py-24', fondos[fondo], clase]} aria-labelledby={titulo && id ? `${id}-titulo` : undefined}>
+<section id={id} class:list={['cv-auto py-16 sm:py-24', fondos[fondo], clase]} aria-labelledby={titulo && id ? `${id}-titulo` : undefined}>
   <Contenedor>
     {(titulo || introduccion) && (
       <header class="mb-10 max-w-3xl sm:mb-14">
