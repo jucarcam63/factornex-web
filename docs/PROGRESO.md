@@ -57,7 +57,8 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - [x] Página 404 propia y cabeceras de seguridad básicas (`vercel.json`)
 - [ ] Revisar en móvil, tablet y ordenador
 - [ ] Decidir el plan de alojamiento: Vercel Pro (uso comercial) u otro alojamiento (ver DECISIONES.md, pendiente 0)
-- [ ] Conectar dominio factornex.es (dominio comprado por el titular en IONOS) y correo (reenvío gratis `contacto@` → Gmail para empezar)
+- [~] Dominio `factornex.es` comprado en IONOS (pack Correo Básico 5, dominio incluido el primer año; verificación de datos del titular completada) y conectado a Vercel (2026-11-22). **Configuración hecha:** en Vercel están `factornex.es` (producción) y `www.factornex.es` (redirección 308 a `factornex.es`); en el DNS de IONOS: A `@` → 216.198.79.1 y CNAME `www` → 61a48e7d608af9f8.vercel-dns-017.com, y se conservan los registros del correo (MX mx00/mx01.ionos.es, SPF `v=spf1 include:_spf-eu.ionos.com ~all`, DKIM s1/s2, `_dmarc`, `autodiscover`) y los servidores DNS de IONOS. **Pendiente (esperando al registro `.es`):** el registro oficial `.es` aún no publica el dominio (a.nic.es respondía "no existe"); hasta entonces el correo saliente falla con "550 invalid DNS MX or A/AAAA". Si pasa un día entero sin publicarse, contactar con el soporte de IONOS. **Cuando se publique:** comprobar que Vercel marca "Valid Configuration" y emite el HTTPS, probar el correo en los dos sentidos, verificar el dominio en Resend (añadir sus registros DNS sin romper el SPF de IONOS) y definir `CONTACT_FROM_EMAIL`, y valorar `CONTACT_TO_EMAIL=contacto@factornex.es`.
+- [ ] Contrato de correo IONOS: 1 EUR/mes los 12 primeros meses y 2,50 EUR/mes después; renovación automática; revisar antes de octubre de 2027 y comprobar qué pasa con el dominio al cancelarlo
 - [ ] Publicar
 
 ## Fase 4 — Después del lanzamiento
