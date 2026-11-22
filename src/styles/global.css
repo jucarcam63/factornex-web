@@ -83,7 +83,7 @@
   .texto-legal strong { color: var(--color-texto); }
   .texto-legal a { color: var(--color-turquesa); text-decoration: underline; text-underline-offset: 4px; }
   .texto-legal a:hover { color: #fff; }
-  .texto-legal table { width: 100%; margin-top: 1rem; border-collapse: collapse; }
+  .texto-legal table { display: block; max-width: 100%; overflow-x: auto; margin-top: 1rem; border-collapse: collapse; }
   .texto-legal th, .texto-legal td { border: 1px solid var(--color-borde); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; color: var(--color-suave); }
   .texto-legal th { color: var(--color-texto); background: rgb(255 255 255 / 0.04); }
 

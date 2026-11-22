@@ -18,13 +18,13 @@ import { RESERVA_URL, RESERVA_EXTERNA, WHATSAPP_NUMERO } from '../config';
 
         <div class="mt-8 space-y-6">
           {RESERVA_EXTERNA && (
-            <Tarjeta titulo="Reservar una llamada">
+            <Tarjeta titulo="Reservar una llamada" nivel="h2">
               <p>Elige el día y la hora que mejor te vengan.</p>
               <div class="mt-4"><Boton href={RESERVA_URL}>Reservar una llamada</Boton></div>
             </Tarjeta>
           )}
           {WHATSAPP_NUMERO && (
-            <Tarjeta titulo="Escríbenos por WhatsApp">
+            <Tarjeta titulo="Escríbenos por WhatsApp" nivel="h2">
               <p>Respuesta por mensaje, cuando te venga bien.</p>
               <div class="mt-4"><Boton href={`https://wa.me/${WHATSAPP_NUMERO}`} variante="secundario">Abrir WhatsApp</Boton></div>
             </Tarjeta>
