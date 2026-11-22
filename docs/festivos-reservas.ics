@@ -1,0 +1,170 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FACTORNEX//Festivos//ES
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:festivo-factornex-20270101-0@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Año Nuevo
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20270106-1@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Epifanía del Señor
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20270501-2@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Fiesta del Trabajo
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20270502-3@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20270502
+DTEND;VALUE=DATE:20270503
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Fiesta de la Comunidad de Madrid
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20270815-4@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20270815
+DTEND;VALUE=DATE:20270816
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Asunción de la Virgen
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20271012-5@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20271012
+DTEND;VALUE=DATE:20271013
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Fiesta Nacional de España
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20271101-6@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20271101
+DTEND;VALUE=DATE:20271102
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Todos los Santos
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20261206-7@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Día de la Constitución
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20261208-8@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Inmaculada Concepción
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20261225-9@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Navidad
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20261224-10@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20261224
+DTEND;VALUE=DATE:20261225
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Nochebuena (no oficial)
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20261231-11@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+RRULE:FREQ=YEARLY
+SUMMARY:Festivo - no reservar: Nochevieja (no oficial)
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20261207-100@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+SUMMARY:Festivo - no reservar: Traslado del Día de la Constitución (Madrid 2026)
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20270319-101@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20270319
+DTEND;VALUE=DATE:20270320
+SUMMARY:Festivo - no reservar: San José (Madrid 2027)
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20270325-102@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20270325
+DTEND;VALUE=DATE:20270326
+SUMMARY:Festivo - no reservar: Jueves Santo (2027)
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20270326-103@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20270326
+DTEND;VALUE=DATE:20270327
+SUMMARY:Festivo - no reservar: Viernes Santo (2027)
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:festivo-factornex-20270816-104@factornex.es
+DTSTAMP:20261122T120000Z
+DTSTART;VALUE=DATE:20270816
+DTEND;VALUE=DATE:20270817
+SUMMARY:Festivo - no reservar: Traslado de la Asunción (Madrid 2027)
+DESCRIPTION:Bloquea la página de reservas de FACTORNEX (diagnóstico gratuito) en festivos nacionales y de la Comunidad de Madrid.
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
