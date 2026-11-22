@@ -102,10 +102,10 @@ const pasos = [
 <noscript><style>.cd-msg, .cd-paso { display: flex !important; }</style></noscript>
 
 <style is:global>
-  /* Con movimiento permitido, los mensajes y pasos empiezan ocultos y los muestra el script uno a uno.
-     Sin JavaScript (noscript) o con "reducir movimiento" se ven todos desde el principio. */
+  /* Los mensajes y pasos empiezan ocultos y los muestra el script uno a uno (sin JavaScript, el noscript los muestra).
+     Con "reducir movimiento" siguen saliendo en orden, pero sin deslizarse ni animarse. */
+  .cd-msg:not(.cd-visto), .cd-paso:not(.cd-visto) { display: none; }
   @media (prefers-reduced-motion: no-preference) {
-    .cd-msg:not(.cd-visto), .cd-paso:not(.cd-visto) { display: none; }
     .cd-msg.cd-visto { animation: cd-entra 0.35s ease both; }
     .cd-paso.cd-visto { animation: cd-entra 0.4s ease both; }
   }
@@ -121,10 +121,12 @@ const pasos = [
   }
   .cd-escribiendo i {
     width: 6px; height: 6px; border-radius: 9999px; background: #8fa3ad; display: block;
-    animation: cd-punto 1s infinite ease-in-out;
   }
-  .cd-escribiendo i:nth-child(2) { animation-delay: 0.15s; }
-  .cd-escribiendo i:nth-child(3) { animation-delay: 0.3s; }
+  @media (prefers-reduced-motion: no-preference) {
+    .cd-escribiendo i { animation: cd-punto 1s infinite ease-in-out; }
+    .cd-escribiendo i:nth-child(2) { animation-delay: 0.15s; }
+    .cd-escribiendo i:nth-child(3) { animation-delay: 0.3s; }
+  }
   @keyframes cd-punto {
     0%, 80%, 100% { opacity: 0.35; transform: translateY(0); }
     40% { opacity: 1; transform: translateY(-3px); }
@@ -159,19 +161,17 @@ const pasos = [
     }
   }
 
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const figuras = document.querySelectorAll<HTMLElement>('[data-chat]');
-    const observador = new IntersectionObserver(
-      (entradas) => {
-        for (const e of entradas) {
-          if (e.isIntersecting) {
-            observador.unobserve(e.target);
-            reproducir(e.target as HTMLElement);
-          }
+  const figuras = document.querySelectorAll<HTMLElement>('[data-chat]');
+  const observador = new IntersectionObserver(
+    (entradas) => {
+      for (const e of entradas) {
+        if (e.isIntersecting) {
+          observador.unobserve(e.target);
+          reproducir(e.target as HTMLElement);
         }
-      },
-      { threshold: 0.5 },
-    );
-    figuras.forEach((f) => observador.observe(f));
-  }
+      }
+    },
+    { threshold: 0.3 },
+  );
+  figuras.forEach((f) => observador.observe(f));
 </script>
