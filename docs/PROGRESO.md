@@ -12,7 +12,18 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 - Contacto cerrado: formulario activo y reserva de llamadas con Google Calendar enlazada (2026-11-22). Pendiente solo el WhatsApp de empresa (cuando haya número).
 - Aviso de seguridad conocido: `npm audit` marca 3 vulnerabilidades altas en `path-to-regexp` (dependencia de compilación de `@astrojs/vercel`, no recibe datos de usuarios). La "corrección" que propone npm instala una versión antigua e incompatible; no aplicar. Revisar al actualizar el adaptador.
 - Repositorio: https://github.com/jucarcam63/factornex-web (rama `main` subida, 2026-11-22).
-- Pendiente de tu parte: logo SVG definitivo (ver MARCA.md), URL del sistema de citas y datos legales (DECISIONES.md).
+- Pendiente de tu parte: logo SVG definitivo (ver MARCA.md) y los datos legales que faltan (DECISIONES.md).
+- **ANTES DE CERRAR / LANZAR: pasar la reserva de llamadas a Calendly** (decisión del titular, 2026-11-22: le parece más profesional; hoy funciona con Google Calendar y se mantiene hasta entonces). Lista de tareas:
+  1. Decidir la cuenta de Calendly para FACTORNEX (la actual es jucarcam65; el evento de Nutridit era una prueba y se puede reutilizar la cuenta) y conectarla al **calendario de jucarcam63** (donde llegan las consultas), para que las citas queden en esa agenda y no se solapen.
+  2. Poner el logo definitivo de FACTORNEX (SVG) y el nombre de marca en la cuenta de Calendly (hoy sale el logo de Nutridit).
+  3. Evento "Diagnóstico gratuito FACTORNEX" (ya existe uno de prueba en la cuenta jucarcam65): 30 min, Google Meet, laborables 9:00-17:00, aviso mínimo, y preguntas útiles (empresa, teléfono, qué quiere mejorar). Revisar los límites del plan gratuito.
+  4. Activar los avisos al anfitrión y a quien reserva, y comprobar que cada cita aparece en la agenda.
+  5. Repetir el bloqueo de festivos (nacionales y de Madrid) en Calendly o comprobar que respeta los eventos "Festivo - no reservar" del calendario de jucarcam63 (ver `docs/festivos-reservas.ics`).
+  6. Valorar una página de "gracias" en la web a la que redirija Calendly tras reservar.
+  7. Actualizar `RESERVA_URL` en `src/config.ts`.
+  8. **Actualizar las políticas de privacidad y cookies**: nombrar a Calendly como encargado (y su política), recordar que sus páginas pueden usar cookies propias (mostraron un banner con cookies de analítica y marketing), y quitar la mención de Google Calendar como sistema de reservas.
+  9. Probar una reserva de punta a punta con un correo de prueba y anular la cita de prueba.
+  10. Después, retirar la página de reservas de Google Calendar o dejarla desactivada.
 
 ## Fase 0 — Preparación
 - [x] Confirmar nombre definitivo: FACTORNEX
@@ -39,7 +50,9 @@ Actualizar al final de cada sesión: qué se hizo, qué queda, siguiente paso.
 ## Fase 3 — Técnico y lanzamiento
 - [ ] SEO: títulos, descripciones, sitemap, robots.txt, Open Graph, datos estructurados
 - [ ] Accesibilidad y rendimiento (Lighthouse > 90)
+- [ ] Pasar la reserva de llamadas a Calendly (ver la lista de tareas en "Ahora mismo")
 - [ ] Probar formulario de punta a punta
+- [ ] Retirar la página temporal `/guia-estilo`
 - [ ] Revisar en móvil, tablet y ordenador
 - [ ] Conectar dominio factornex.es y correo corporativo
 - [ ] Publicar
