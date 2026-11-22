@@ -9,22 +9,8 @@ import Faq from '../components/Faq.astro';
 import Tarjeta from '../components/Tarjeta.astro';
 import Boton from '../components/Boton.astro';
 import { RESERVA_URL, SITE } from '../config';
+import { pasosHistoria, preguntasComunes } from '../contenidos/agente';
 
-const pasos = [
-  { titulo: 'Escribe', texto: 'Un domingo a las 19:42, una clienta pregunta por WhatsApp si tienes hueco. Tu negocio está cerrado.' },
-  { titulo: 'Responde', texto: 'El agente contesta enseguida y se presenta como asistente virtual.' },
-  { titulo: 'Entiende', texto: 'Averigua qué servicio necesita, para cuándo y qué más quiere saber.' },
-  { titulo: 'Presupuesta y agenda', texto: 'Calcula el presupuesto con tus tarifas y reserva el hueco en tu calendario.' },
-  { titulo: 'Te avisa', texto: 'Recibes el aviso con los datos del cliente. El lunes solo tienes que atenderla.' },
-];
-
-const preguntas = [
-  { pregunta: '¿Atiende llamadas además de WhatsApp?', respuesta: 'Sí. El agente atiende tanto los mensajes de WhatsApp como las llamadas de tu negocio, a cualquier hora.' },
-  { pregunta: '¿Y si se equivoca?', respuesta: 'Trabaja con la información y las tarifas que tú le facilitas. Cuando no está seguro o la consulta se sale de lo habitual, no improvisa: pasa el caso a una persona de tu equipo.' },
-  { pregunta: '¿Cómo paso a una persona?', respuesta: 'Cuando el agente no sabe responder, o cuando el cliente lo pide, avisa a tu equipo para que lo retome una persona.' },
-  { pregunta: '¿Se conecta con mi programa?', respuesta: 'Se conecta con herramientas como tu calendario. Si usas otro programa de gestión, lo vemos en la llamada.' },
-  { pregunta: '¿Mis clientes sabrán que es una IA?', respuesta: 'Sí. El agente siempre se presenta como asistente virtual de IA. Es lo correcto y lo exige la normativa europea sobre inteligencia artificial.' },
-];
 ---
 <Base titulo={`${SITE.nombre} — ${SITE.descriptor}`} descripcion="Agente de IA que atiende el WhatsApp y las llamadas de tu negocio: responde, presupuesta, agenda citas y avisa. Para pymes, autónomos y comercios.">
   <Hero
@@ -46,7 +32,7 @@ const preguntas = [
   </Seccion>
 
   <Seccion id="como-funciona" titulo="Cómo funciona, con un ejemplo" introduccion="Así sería un domingo por la tarde en un negocio con el agente funcionando.">
-    <Pasos pasos={pasos} />
+    <Pasos pasos={pasosHistoria} />
   </Seccion>
 
   <Seccion fondo="claro" id="que-hace" titulo="Un empleado que nunca cierra" introduccion="El agente es como una persona más de tu equipo, con sus tareas claras.">
@@ -86,7 +72,7 @@ const preguntas = [
   </Seccion>
 
   <Seccion id="preguntas" titulo="Preguntas frecuentes">
-    <Faq preguntas={preguntas} />
+    <Faq preguntas={preguntasComunes} />
   </Seccion>
 
   <Seccion fondo="noche" id="reserva" titulo="Hablemos de tu negocio" introduccion="Reserva una llamada de diagnóstico gratuito y te contamos cómo encajaría un agente en tu día a día.">
