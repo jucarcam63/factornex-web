@@ -1,16 +1,16 @@
 // @ts-check
 import { defineConfig, envField } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
-import vercel from '@astrojs/vercel';
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://factornex.es',
   // Web estática; solo /api/contacto se ejecuta en el servidor (prerender = false).
-  adapter: vercel(),
+  adapter: netlify(),
   // El CSS (≈11 KB) va dentro del HTML: elimina una petición que bloqueaba el pintado.
   build: { inlineStylesheets: 'always' },
-  // Variables privadas: se definen en .env (local) y en Vercel → Settings → Environment Variables.
+  // Variables privadas: se definen en .env (local) y en Netlify → Site configuration → Environment variables.
   env: {
     schema: {
       RESEND_API_KEY: envField.string({ context: 'server', access: 'secret', optional: true }),
