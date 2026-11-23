@@ -4,3 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # El detector de secretos de Netlify para la compilación si encuentra el valor de una variable en un archivo.
+  # Estos dos correos son públicos a propósito (salen en el aviso legal y en la privacidad) y se citan en docs/.
+  SECRETS_SCAN_OMIT_KEYS = "CONTACT_TO_EMAIL,CONTACT_FROM_EMAIL"
+  # El NIF solo debe aparecer en el aviso legal (decisión del titular): se exime únicamente esa página.
+  SECRETS_SCAN_OMIT_PATHS = "dist/aviso-legal/**"
